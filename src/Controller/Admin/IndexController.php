@@ -4,10 +4,7 @@ namespace App\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Family;
-use App\Entity\Discipline;
-use App\Entity\Skill;
-use App\Entity\Level;
+
 use App\Repository\FamilyRepository;
 use Symfony\Component\HttpFoundation\Response;
 
