@@ -1,0 +1,5 @@
+Hautelook\AliceBundle\Functional\TestBundle\Entity\Family:
+  family{0..10}:
+    __factory:
+      '@app.family_factory::create':
+      - <current()>
