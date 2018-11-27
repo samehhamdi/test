@@ -1,0 +1,58 @@
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+
+   {{ form_label(form.titleEn) }} {{ form_widget(form.titleEn) }}
+   {{ form_label(form.titleFr) }} {{ form_widget(form.titleFr) }}
+   {{ form_label(form.descriptionEn) }}{{ form_widget(form.descriptionEn) }}
+   {{ form_label(form.descriptionFr) }}{{ form_widget(form.descriptionFr) }}
+   {{ form_label(form.skilltype) }} {{ form_widget(form.skilltype) }}
+  <b>{{ form_label(form.levels) }}</b> {{ form_widget(form.levels) }}
+
+<ul id="levels"
+    data-prototype="{{ form_widget(form.levels.vars.prototype)|e }}"
+    data-widget-levels="{{ '<li></li>'|e }}">
+     
+</ul>
+<!--<a href="#" id="add_level" class="btn btn-default">Ajouter une catégorie</a>-->
+<button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var $container = $('div#skill_levels');
+
+        var index = $container.find(':input').length;
+
+
+        if (index == 0) {
+            for (var i = 1; i <= 5; i++) {
+                addCategory($container);
+            }
+        }
+
+        function addCategory($container) {
+
+            // Dans le contenu de l'attribut « data-prototype », on remplace :
+            // - le texte "__name__label__" qu'il contient par le label du champ
+            // - le texte "__name__" qu'il contient par le numéro du champ
+            var template = $container.attr('data-prototype')
+                .replace(/__name__label__/g, 'Level ' + (index + 1))
+                .replace(/__name__/g, index)
+            ;
+
+            // On crée un objet jquery qui contient ce template
+            var $prototype = $(template);
+
+
+            // On ajoute le prototype modifié à la fin de la balise <div>
+            $container.append($prototype);
+
+            // Enfin, on incrémente le compteur pour que le prochain ajout se fasse avec un autre numéro
+            index++;
+        }
+
+
+    });
+</script>

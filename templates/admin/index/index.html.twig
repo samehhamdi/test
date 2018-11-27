@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello !{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Families! ✅</h1>
+
+
+    <ul>
+        {% for family in families %}
+          <h2> {{ family.titleEn }}</h2>
+            **Disciplines**
+        {% for discipline in family.disciplines %}
+        <li>
+            <h4> {{ discipline.titleEn }}**{{ discipline.grade ? discipline.grade|join(', ') : ''  }}</h4>
+            ***Skills**
+            {% for object in discipline.disciplinesd %}
+            <h4> {{ object.skill.titleEn }}**{{ object.level.grade }}</h4>
+            {%  endfor %}
+        </li>
+        {% endfor %}
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

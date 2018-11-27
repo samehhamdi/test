@@ -1,0 +1,58 @@
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+
+   {{ form_label(form.titleEn) }} {{ form_widget(form.titleEn) }}
+   {{ form_label(form.titleFr) }} {{ form_widget(form.titleFr) }}
+   {{ form_label(form.descriptionEn) }}{{ form_widget(form.descriptionEn) }}
+   {{ form_label(form.descriptionFr) }}{{ form_widget(form.descriptionFr) }}
+ {{ form_label(form.grade) }}{{ form_widget(form.grade) }}
+ {{ form_label(form.family) }}{{ form_widget(form.family) }}
+<b>{{ form_label(form.disciplinesd) }}</b> {{ form_widget(form.disciplinesd) }}
+
+<ul id="disciplinesd"
+    data-prototype="{{ form_widget(form.disciplinesd.vars.prototype)|e }}"
+    data-widget-levels="{{ '<li></li>'|e }}">
+     
+</ul>
+<a href="#" id="add_discipline" class="btn btn-default">Add Skill</a>
+<button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var $container = $('div#discipline_disciplinesd');
+
+        var index = $container.find(':input').length;
+        $('#add_discipline').click(function(e) {
+            addCategory($container);
+
+            e.preventDefault(); // évite qu'un # apparaisse dans l'URL
+            return false;
+        });
+
+        function addCategory($container) {
+
+            // Dans le contenu de l'attribut « data-prototype », on remplace :
+            // - le texte "__name__label__" qu'il contient par le label du champ
+            // - le texte "__name__" qu'il contient par le numéro du champ
+            var template = $container.attr('data-prototype')
+                .replace(/__name__label__/g, 'Skill ' + (index + 1))
+                .replace(/__name__/g, index)
+            ;
+
+            // On crée un objet jquery qui contient ce template
+            var $prototype = $(template);
+
+
+            // On ajoute le prototype modifié à la fin de la balise <div>
+            $container.append($prototype);
+
+            // Enfin, on incrémente le compteur pour que le prochain ajout se fasse avec un autre numéro
+            index++;
+        }
+
+
+    });
+</script>

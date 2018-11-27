@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Family index{% endblock %}
+
+{% block body %}
+    <h1>Family index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <!--<th>Status</th>-->
+                <th>DateCreated</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for family in families %}
+            <tr>
+                <td>{{ family.id }}</td>
+                <td>{{ family.titleEn }}</td>
+                <td>{{ family.descriptionEn }}</td>
+                <!--<td>{{ family.status ? 'Active' : 'Not Active' }}</td>-->
+                <td>{{ family.dateCreated ? family.dateCreated|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('family_edit', {'id': family.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('family_new') }}">Create new</a>
+{% endblock %}

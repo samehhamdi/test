@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Skill index{% endblock %}
+
+{% block body %}
+    <h1>Skill index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tilte</th>
+                <th>Description</th>
+                <th>Skilltype</th>
+               <!-- <th>Status</th>-->
+                <th>DateCreated</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for skill in skills %}
+            <tr>
+                <td>{{ skill.id }}</td>
+                <td>{{ skill.titleEn }}</td>
+                <td>{{ skill.descriptionEn }}</td>
+                <td>{{ skill.skilltype }}</td>
+              <!--  <td>{{ skill.status ? 'Active' : 'Not Active' }}</td>-->
+                <td>{{ skill.dateCreated ? skill.dateCreated|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('skill_edit', {'id': skill.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('skill_new') }}">Create new</a>
+{% endblock %}
