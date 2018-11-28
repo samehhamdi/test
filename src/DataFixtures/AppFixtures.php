@@ -15,16 +15,20 @@ class AppFixtures extends Fixture
 
         for ($i = 0; $i < 10; $i++) {
             $family = new Family();
-            $family->setTitle($faker->jobTitle);
-            $family->setDescription($faker->text);
+            $family->setTitleEn($faker->jobTitle);
+             $family->setTitleFr($faker->jobTitle);
+            $family->setDescriptionEn($faker->text);
+            $family->setDescriptionFr($faker->text);
             $family->setStatus(1);
             $family->setDateCreated((\DateTime::createFromFormat('Y-m-d', date('Y-m-d'))));
             $manager->persist($family);
         }
         for ($i = 0; $i < 10; $i++) {
             $discipline = new Discipline();
-            $discipline->setTitle($faker->jobTitle);
-            $discipline->setDescription($faker->text);
+            $discipline->setTitleEn($faker->jobTitle);
+            $discipline->setTitleFr($faker->jobTitle);
+            $discipline->setDescriptionEn($faker->text);
+            $discipline->setDescriptionFr($faker->text);
             $discipline->setStatus(1);
             $discipline->setGrade(array(1,2));
             $discipline->setFamily($family);
