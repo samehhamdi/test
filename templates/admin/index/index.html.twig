@@ -3,29 +3,71 @@
 {% block title %}Hello !{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Families! ✅</h1>
 
 
-    <ul>
-        {% for family in families %}
-          <h2> {{ family.titleEn }}</h2>
-            **Disciplines**
-        {% for discipline in family.disciplines %}
-        <li>
-            <h4> {{ discipline.titleEn }}**{{ discipline.grade ? discipline.grade|join(', ') : ''  }}</h4>
-            ***Skills**
-            {% for object in discipline.disciplinesd %}
-            <h4> {{ object.skill.titleEn }}**{{ object.level.grade }}</h4>
-            {%  endfor %}
-        </li>
-        {% endfor %}
-        {% endfor %}
-    </ul>
-</div>
+    <div class="wrapper">
+        <a href="{{ path('family_new') }}">Create new family</a> ✅
+        <a href="{{ path('discipline_new') }}">Create new discipline</a> ✅
+        <a href="{{ path('skill_new') }}">Create new skill</a>
+        <table class="table">
+
+
+            {% for family in families %}
+                <tr>
+                    <td><h3>Family Title</h3></td>
+                    <td><h3>Family Description</h3></td>
+                </tr>
+                <tr>
+                    <td>
+                        {{ family.titleEn }}
+                    </td>
+                    <td>
+                        {{ family.DescriptionEn }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td><h4>Discipline Title</h4></td>
+                                <td><h4>Discipline Description</h4></td>
+                            </tr>
+                            {% for discipline in family.disciplines %}
+                                <tr>
+                                    <td>{{ discipline.titleEn }}</td>
+                                    <td>{{ discipline.DescriptionEn }}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td><h5>Skill Title</h5></td>
+                                                <td><h5>Skill Description</h5></td>
+                                            </tr>
+                                            {% for skilld in discipline.disciplinesd %}
+                                                <tr>
+                                                    <td>{{ skilld.skill.titleEn }}</td>
+                                                    <td>{{ skilld.skill.DescriptionEn }}</td>
+                                                </tr>
+                                            {% else %}
+                                                <tr>
+                                                    <td colspan="6">no records found</td>
+                                                </tr>
+                                            {% endfor %}
+                                        </table>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="6">no records found</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </td>
+                </tr>
+
+
+            {% endfor %}
+        </table>
+    </div>
 {% endblock %}

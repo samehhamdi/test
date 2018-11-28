@@ -7,19 +7,19 @@
 
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Description</th>
-                <!--<th>Status</th>-->
-                <th>DateCreated</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+
+            <th>Title</th>
+            <th>Description</th>
+            <!--<th>Status</th>-->
+            <th>DateCreated</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for family in families %}
             <tr>
-                <td>{{ family.id }}</td>
+
                 <td>{{ family.titleEn }}</td>
                 <td>{{ family.descriptionEn }}</td>
                 <!--<td>{{ family.status ? 'Active' : 'Not Active' }}</td>-->

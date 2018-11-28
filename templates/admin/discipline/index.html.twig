@@ -7,24 +7,22 @@
 
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Description</th>
-                <!--<th>Status</th>-->
-                <th>DateCreated</th>
-                <th>Level</th>
-                <th>Family</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <!--<th>Status</th>-->
+            <th>DateCreated</th>
+            <th>Level</th>
+            <th>Family</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for discipline in disciplines %}
             <tr>
-                <td>{{ discipline.id }}</td>
                 <td>{{ discipline.titleEn }}</td>
                 <td>{{ discipline.descriptionEn }}</td>
-               <!-- <td>{{ discipline.status ? 'Active' : 'Not Active' }}</td>-->
+                <!-- <td>{{ discipline.status ? 'Active' : 'Not Active' }}</td>-->
                 <td>{{ discipline.dateCreated ? discipline.dateCreated|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ discipline.grade ? discipline.grade|join(', ') : '' }}</td>
                 <td>{{ discipline.family.titleEn }}</td>

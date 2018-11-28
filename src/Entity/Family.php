@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
 
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -22,26 +23,32 @@ class Family
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
+     *
+     * @Assert\NotBlank(message="Required")
      *
      */
     private $titleEn;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
+     *
+     * @Assert\NotBlank(message="Required")
+     *
      */
     private $descriptionEn;
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
+     *
+     * @Assert\NotBlank(message="Required")
      *
      */
     private $titleFr;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
+     *
+     * @Assert\NotBlank(message="Required")
+     *
      */
     private $descriptionFr;
     /**
@@ -61,7 +68,7 @@ class Family
 
     public function __construct()
     {
-       // $this->disciplines = new ArrayCollection();
+        // $this->disciplines = new ArrayCollection();
         $this->disciplines = new ArrayCollection();
     }
 
@@ -220,6 +227,5 @@ class Family
         return $this;
     }
 
-   
 
 }

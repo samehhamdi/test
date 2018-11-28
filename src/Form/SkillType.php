@@ -21,23 +21,22 @@ class SkillType extends AbstractType
             ->add('descriptionEn')
             ->add('descriptionFr')
             ->add('skilltype', ChoiceType::class, array(
-                    'choices' => array(
-                    'Technical'=>'T', 'Functional'=>'F','Core'=>'C'),
-                    'multiple'=>false,
-                    'expanded'=>true,
-                ))
-
+                'choices' => array(
+                    'Technical' => 'T', 'Functional' => 'F', 'Core' => 'C'),
+                'multiple' => false,
+                'expanded' => true,
+            ))
             ->add('levels', CollectionType::class, array(
                 'entry_type' => LevelType::class,
                 'allow_add' => true,
                 'prototype' => true,
-                'by_reference'=>false,
+                'by_reference' => false,
 
             ))
 
 
-           // ->add('status')
-           // ->add('dateCreated')
+            // ->add('status')
+            // ->add('dateCreated')
         ;
     }
 

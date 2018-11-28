@@ -14,10 +14,10 @@ class IndexController extends AbstractController
      * @Route("/admin", name="index")
      */
 
-        public function index(FamilyRepository $familyRepository): Response
-        {
+    public function index(FamilyRepository $familyRepository): Response
+    {
         return $this->render('admin/index/index.html.twig', ['families' => $familyRepository->findAll()]);
 
 
-        }
+    }
 }

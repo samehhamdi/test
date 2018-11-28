@@ -21,28 +21,26 @@ class DisciplineType extends AbstractType
             ->add('titleFr')
             ->add('descriptionEn')
             ->add('descriptionFr')
-
             ->add('grade', ChoiceType::class, array(
-                'label'=>'Level',
-                'choices' => array(
-                '0'=>0,'1'=>1, '2'=>2, '3'=>3, '4'=>4, '5'=>5, '6'=>6, '7',7, '8'=>8),
-                 'multiple'=>true,
-                    'expanded'=>true,
+                    'label' => 'Level',
+                    'choices' => array(
+                        '0' => 0, '1' => 1, '2' => 2, '3' => 3, '4' => 4, '5' => 5, '6' => 6, '7', 7, '8' => 8),
+                    'multiple' => true,
+                    'expanded' => true,
+                )
             )
-            )
-            ->add('family',EntityType::class,array(
-              'class'=>Family::class,
-              'choice_label'=>'titleEn',
+            ->add('family', EntityType::class, array(
+                'class' => Family::class,
+                'choice_label' => 'titleEn',
             ))
             ->add('disciplinesd', CollectionType::class, array(
                 'entry_type' => DisciplineSkillLevelType::class,
-                'label'=>'Skills',
+                'label' => 'Skills',
                 'allow_add' => true,
                 'prototype' => true,
-                'by_reference'=>false,
+                'by_reference' => false,
 
-            ))
-        ;
+            ));
     }
 
     public function configureOptions(OptionsResolver $resolver)

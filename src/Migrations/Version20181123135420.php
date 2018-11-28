@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version20181123135420 extends AbstractMigration
 {
-    public function up(Schema $schema) : void
+    public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
@@ -18,7 +18,7 @@ final class Version20181123135420 extends AbstractMigration
         $this->addSql('ALTER TABLE product ADD test1 JSON NOT NULL COMMENT \'(DC2Type:json_array)\', ADD test2 LONGTEXT NOT NULL COMMENT \'(DC2Type:array)\', CHANGE test test JSON NOT NULL COMMENT \'(DC2Type:json_array)\'');
     }
 
-    public function down(Schema $schema) : void
+    public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');

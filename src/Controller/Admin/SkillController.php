@@ -36,9 +36,9 @@ class SkillController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $skill->setStatus(1);
             $skill->setDateCreated((\DateTime::createFromFormat('Y-m-d', date('Y-m-d'))));
-           foreach($skill->getLevels() as $key=>$level){
-              $level->setGrade($key+1);
-           }
+            foreach ($skill->getLevels() as $key => $level) {
+                $level->setGrade($key + 1);
+            }
 
             $em->persist($skill);
             $em->flush();
@@ -51,7 +51,6 @@ class SkillController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-
 
 
     /**
@@ -79,7 +78,7 @@ class SkillController extends AbstractController
      */
     public function delete(Request $request, Skill $skill): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$skill->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $skill->getId(), $request->request->get('_token'))) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($skill);
             $em->flush();

@@ -21,10 +21,10 @@ class FamilyType extends AbstractType
                 'entry_type' => DisciplineType::class,
                 'allow_add' => true,
                 'prototype' => true,
-                'by_reference'=>false,
+                'by_reference' => false,
 
             ))
-           // ->add('status')
+            // ->add('status')
             //->add('dateCreated')
         ;
     }

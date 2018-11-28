@@ -9,7 +9,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\SkillRepository")
-
  */
 class Skill
 {
@@ -22,29 +21,29 @@ class Skill
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="Required")
      */
     private $titleEn;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="Required")
      */
     private $descriptionEn;
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="Required")
      */
     private $titleFr;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="Required")
      */
     private $descriptionFr;
     /**
      * @ORM\Column(type="string", length=50)
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="Required")
      */
     private $skilltype;
 

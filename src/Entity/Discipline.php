@@ -9,7 +9,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\DisciplineRepository")
-
  */
 class Discipline
 {
@@ -22,33 +21,32 @@ class Discipline
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="Required")
      *
      */
     private $titleEn;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="Required")
      */
     private $descriptionEn;
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="Required")
      *
      */
     private $titleFr;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="Required")
      */
     private $descriptionFr;
     /**
      * @ORM\Column(type="boolean")
      */
     private $status;
-
 
 
     /**
@@ -76,7 +74,6 @@ class Discipline
     {
         $this->disciplinesd = new ArrayCollection();
     }
-
 
 
     public function getId(): ?int
@@ -120,7 +117,6 @@ class Discipline
         return $this;
     }
 
-  
 
     public function getDateCreated(): ?\DateTimeInterface
     {
@@ -237,7 +233,5 @@ class Discipline
         return $this;
     }
 
-   
-   
 
 }

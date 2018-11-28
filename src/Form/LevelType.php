@@ -15,9 +15,7 @@ class LevelType extends AbstractType
             ->add('titleEn')
             ->add('titleFr')
             ->add('descriptionEn')
-            ->add('descriptionFr')
-
-        ;
+            ->add('descriptionFr');
     }
 
     public function configureOptions(OptionsResolver $resolver)

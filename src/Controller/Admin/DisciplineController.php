@@ -37,7 +37,7 @@ class DisciplineController extends AbstractController
 
             $discipline->setStatus(1);
             $discipline->setDateCreated((\DateTime::createFromFormat('Y-m-d', date('Y-m-d'))));
-            foreach($discipline->getDisciplinesd() as $key=>$disciplined){
+            foreach ($discipline->getDisciplinesd() as $key => $disciplined) {
                 $disciplined->setDateCreated((\DateTime::createFromFormat('Y-m-d', date('Y-m-d'))));
             }
             $em->persist($discipline);
@@ -51,7 +51,6 @@ class DisciplineController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-
 
 
     /**
@@ -79,7 +78,7 @@ class DisciplineController extends AbstractController
      */
     public function delete(Request $request, Discipline $discipline): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$discipline->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $discipline->getId(), $request->request->get('_token'))) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($discipline);
             $em->flush();

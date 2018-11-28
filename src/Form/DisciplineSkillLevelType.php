@@ -17,28 +17,24 @@ class DisciplineSkillLevelType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-
-
-          /*  ->add('discipline',EntityType::class,array(
-                'class'=>Discipline::class,
-                'choice_label'=>'titleEn',
-            ))*/
-            ->add('skill',EntityType::class,array(
-                'class'=>Skill::class,
-                'choice_label'=>'titleEn',
+            /*  ->add('discipline',EntityType::class,array(
+                  'class'=>Discipline::class,
+                  'choice_label'=>'titleEn',
+              ))*/
+            ->add('skill', EntityType::class, array(
+                'class' => Skill::class,
+                'choice_label' => 'titleEn',
             ))
-            ->add('level',EntityType::class,array(
-                'class'=>Level::class,
-                'choice_label'=>'titleEn',
+            ->add('level', EntityType::class, array(
+                'class' => Level::class,
+                'choice_label' => 'titleEn',
             ))
             ->add('importance', ChoiceType::class, array(
                 'choices' => array(
-                    'Key'=>'key', 'Major'=>'major','Minor'=>'minor'),
-                'multiple'=>false,
-                'expanded'=>true,
-            ))
-
-        ;
+                    'Key' => 'key', 'Major' => 'major', 'Minor' => 'minor'),
+                'multiple' => false,
+                'expanded' => true,
+            ));
     }
 
     public function configureOptions(OptionsResolver $resolver)

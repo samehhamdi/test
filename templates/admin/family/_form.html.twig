@@ -1,10 +1,10 @@
 {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 
-   {{ form_label(form.titleEn) }} {{ form_widget(form.titleEn) }}
-   {{ form_label(form.titleFr) }} {{ form_widget(form.titleFr) }}
-   {{ form_label(form.descriptionEn) }}{{ form_widget(form.descriptionEn) }}
-   {{ form_label(form.descriptionFr) }}{{ form_widget(form.descriptionFr) }}
-<b>{{ form_label(form.disciplines) }}</b> {{ form_widget(form.disciplines) }}
+   {{ form_label(form.titleEn) }} {{ form_widget(form.titleEn) }}{{ form_errors(form.titleEn) }}
+   {{ form_label(form.titleFr) }} {{ form_widget(form.titleFr) }}{{ form_errors(form.titleFr) }}
+   {{ form_label(form.descriptionEn) }}{{ form_widget(form.descriptionEn) }}{{ form_errors(form.descriptionEn) }}
+   {{ form_label(form.descriptionFr) }}{{ form_widget(form.descriptionFr) }}{{ form_errors(form.descriptionFr) }}
+<br/><b>{{ form_label(form.disciplines) }}</b> {{ form_widget(form.disciplines) }}{{ form_errors(form.disciplines) }}
 
 <ul id="disciplines"
     data-prototype="{{ form_widget(form.disciplines.vars.prototype)|e }}"
@@ -12,6 +12,7 @@
      
 </ul>
 <a href="#" id="add_discipline" class="btn btn-default">Add Discipline</a>
+<br>
 <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
 
@@ -23,31 +24,26 @@
         var $container = $('div#family_disciplines');
 
         var index = $container.find(':input').length;
-        $('#add_discipline').click(function(e) {
-            addCategory($container);
+        $('#add_discipline').click(function (e) {
+            addDiscipline($container);
 
-            e.preventDefault(); // évite qu'un # apparaisse dans l'URL
+            e.preventDefault();
             return false;
         });
 
-        function addCategory($container) {
+        function addDiscipline($container) {
 
-            // Dans le contenu de l'attribut « data-prototype », on remplace :
-            // - le texte "__name__label__" qu'il contient par le label du champ
-            // - le texte "__name__" qu'il contient par le numéro du champ
+
             var template = $container.attr('data-prototype')
                 .replace(/__name__label__/g, 'Discipline ' + (index + 1))
                 .replace(/__name__/g, index)
             ;
 
-            // On crée un objet jquery qui contient ce template
             var $prototype = $(template);
 
 
-            // On ajoute le prototype modifié à la fin de la balise <div>
             $container.append($prototype);
 
-            // Enfin, on incrémente le compteur pour que le prochain ajout se fasse avec un autre numéro
             index++;
         }
 

@@ -19,9 +19,9 @@ class FamilyController extends AbstractController
      * @Route("/", name="family_index", methods="GET")
      */
     public function index(FamilyRepository $familyRepository): Response
-{
-    return $this->render('admin/family/index.html.twig', ['families' => $familyRepository->findAll()]);
-}
+    {
+        return $this->render('admin/family/index.html.twig', ['families' => $familyRepository->findAll()]);
+    }
 
     /**
      * @Route("/new", name="family_new", methods="GET|POST")
@@ -37,7 +37,7 @@ class FamilyController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $family->setStatus(1);
             $family->setDateCreated((\DateTime::createFromFormat('Y-m-d', date('Y-m-d'))));
-            foreach($family->getDisciplines() as $key=>$discipline){
+            foreach ($family->getDisciplines() as $key => $discipline) {
                 $discipline->setStatus(1);
                 $discipline->setDateCreated((\DateTime::createFromFormat('Y-m-d', date('Y-m-d'))));
             }
@@ -54,7 +54,6 @@ class FamilyController extends AbstractController
     }
 
 
-
     /**
      * @Route("/{id}/edit", name="family_edit", methods="GET|POST")
      */
@@ -64,7 +63,7 @@ class FamilyController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            foreach($family->getDisciplines() as $key=>$discipline){
+            foreach ($family->getDisciplines() as $key => $discipline) {
                 $discipline->setStatus(1);
                 $discipline->setDateCreated((\DateTime::createFromFormat('Y-m-d', date('Y-m-d'))));
             }
@@ -84,7 +83,7 @@ class FamilyController extends AbstractController
      */
     public function delete(Request $request, Family $family): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$family->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $family->getId(), $request->request->get('_token'))) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($family);
             $em->flush();
