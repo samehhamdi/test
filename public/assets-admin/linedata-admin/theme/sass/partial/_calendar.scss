@@ -1,0 +1,129 @@
+#yearly-calendar{
+	.month-col{
+		font-size: 0;
+		padding: 2px 0;
+		counter-reset: n;
+		position: relative;
+		.month-details-link{
+			font-size: 15px;
+			position: absolute;
+			left: -20px;
+			font-size: 15px;
+			line-height: 20px;
+		}
+		.month-title{
+			font-family: $nexa-bold;
+			display: inline-block;
+			position: relative;
+			width: 45px;
+			vertical-align: top;
+			line-height: 25px;
+			font-size: 15px;
+			.month-infos{
+				font-family: $roboto;
+				position: absolute;
+				display: none;
+				background: $w;
+				top: -5px;
+				left: 100%;
+				padding: 5px;
+				z-index: 10;
+				box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+				white-space: nowrap;
+				.single-info{
+					margin-right: 10px;
+					white-space: nowrap;
+				}
+			}
+			&:hover{
+				.month-infos{
+					display: block;
+				}
+			}
+		}
+	}
+	.day{
+		counter-increment: n;
+		display: inline-block;
+		height: 28px;
+		width: 28px;
+		background: $grey-2;
+		margin-right: 4px;
+		transition: all .1s ease-in-out;
+		&.dayoff{
+			background: $green-op;
+		}
+		&.holiday{
+			// background: $blue-op;
+			background: $red-op;
+		}
+		&.weekend{
+			background: $grey-1;
+		}
+		&:after{
+			content: counter(n);
+			color: $dark-grey;
+			font-size: 10px;
+			width: 15px;
+			height: 15px;
+			line-height: 15px;
+			text-align: center;
+			background: $w;
+			display: inline-block;
+			margin: 1px;
+		}
+		&:hover{
+			transform: scale(1.5);
+			box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+			z-index: 1;
+			position: relative;
+		}
+	}
+}
+
+@media screen and (max-width: 1350px){
+	#yearly-calendar{	
+		.day{
+			width: 25px;
+			height: 25px;
+		}
+	}
+}
+
+@media screen and (max-width: 1250px){
+	#yearly-calendar{
+		.month-col{
+			.month-title{
+				display: block;
+				width: auto;
+			}
+		}
+		.day{
+			margin-bottom: 4px;
+		}
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	#yearly-calendar{
+		.month-col{
+			.month-details-link{
+				position: relative;
+				left: initial;			
+			}
+			.month-title{
+				.month-infos{
+				    position: relative;
+				    display: block;
+				    left: initial;
+				    white-space: normal;
+				    box-shadow: none;
+				    font-size: 11px;
+				    line-height: normal;
+				    padding: 0;
+				    margin: 5px 0;
+				}
+			}
+		}
+	}
+}

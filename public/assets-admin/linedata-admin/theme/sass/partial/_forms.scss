@@ -1,0 +1,159 @@
+.form-control {
+  &::placeholder {
+    color: $grey;
+  }
+  &.auto-height{
+    height: auto;
+  }
+}
+
+input.form-control,
+textarea.form-control {
+  border: none;
+  background: $w;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  &:focus {
+    background: $w;
+    border: none;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2), 0 2px 0 0 $blue-t-2;
+  }
+}
+select{
+  &.form-control{
+    height: auto !important;
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+}
+/* buttons */
+.btn-primary {
+  background-color: $blue-t-med;
+  border-color: $blue-t-med;
+  &:hover {
+    background-color: $bluedark;
+    border-color: $bluedark;
+  }
+}
+
+/* Slider */
+.slider.slider-horizontal {
+  width: 100%;
+}
+.slider-handle {
+  background: $w;
+  box-shadow: 1px 1px 3px #333;
+}
+.slider.slider-horizontal .slider-track {
+  background: $grey;
+}
+.slider-selection {
+  background: linear-gradient(to bottom, #dc0031, #a30234);
+}
+
+/* checkbox group */
+.checkbox-group {
+  &.horizontal-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    & > span {
+      width: 100%;
+      margin: 0 1px;
+    }
+    label {
+      display: block;
+      // width: 80px;
+      height: 80px;
+      border: 2px solid $grey-2;
+      background-color: $w;
+      position: relative;
+      font-size: 2rem;
+      font-weight: 700;
+      // color: $blue-t-med;
+      color: $grey;
+      text-align: center;
+      line-height: 80px;
+      &:hover {
+        cursor: pointer;
+        background-color: $grey-2;
+        color: $blue-t-med;
+      }
+    }
+    input[type="checkbox"], input[type="radio"] {
+      opacity: 0;
+      position: absolute;
+      &:checked + label {
+        background-color: $blue-t-med;
+        border-color: $bluedark;
+        color: $w;
+      }
+    }
+  }
+  &.group-sm{
+    label{
+      height: 26px;
+      line-height: 26px;
+      font-size: 1.2rem;
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* radio group */
+.radio-group {
+  &.horizontal-group {
+    display: flex;
+    justify-content: space-between;
+    & > span {
+      width: 100%;
+      margin: 0 1px;
+    }
+    label {
+      display: block;
+      // width: 80px;
+      height: 80px;
+      border: 2px solid $grey-2;
+      background-color: $w;
+      position: relative;
+      font-size: 2rem;
+      font-weight: 700;
+      // color: $blue-t-med;
+      color: $grey;
+      text-align: center;
+      line-height: 80px;
+      &:hover {
+        cursor: pointer;
+        background-color: $grey-2;
+        color: $blue-t-med;
+      }
+    }
+    input[type="radio"] {
+      opacity: 0;
+      position: absolute;
+      &:checked + label {
+        background-color: $blue-t-med;
+        border-color: $bluedark;
+        color: $w;
+      }
+    }
+  }
+}
+
+/* Tooltip Fix */
+
+.tooltip {
+  &.in {
+    opacity: 1;
+  }
+}
+
+.login-form {
+  max-width: 500px;
+  width: 90%;
+  margin: 10% auto 0 auto;
+  form {
+    padding: 30px 20px;
+    background-color: $grey-4;
+  }
+}

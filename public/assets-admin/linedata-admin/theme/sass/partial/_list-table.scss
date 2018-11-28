@@ -1,0 +1,58 @@
+.list-table{
+	width: 100%;
+	.user-name{
+		display: block;
+		font-family: $nexa-bold;
+		text-align: center
+	}
+	.list-row{
+		margin-bottom: 2px;
+		font-size: 0;
+		.list-col{
+			display: inline-block;
+			height: 25px;
+			font-size: 13px;
+			line-height: 25px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			background: $grey-1;
+			padding: 0 3px;
+			text-align: center;
+			border-right: 1px solid $w;
+			border-bottom: 1px solid $w;
+			width: 100%;
+			&.col-date, &.col-activity{
+				width: 15%;
+			}
+			&.col-days{
+				width: 10%;
+			}
+			&.col-comment{
+				width: 40%;
+			}
+		}
+		&.title-row{
+			.list-col{
+				background: none;
+				color: $blue-t-2;
+				font-family: $nexa-bold;
+				height: 20px;
+				line-height: 20px;
+			}
+		}
+	}
+	&.d-table{
+		display: table;
+		.user-name{
+			display: table-caption;
+		}
+		.list-row{
+			display: table-row;
+			.list-col{
+				display: table-cell;
+				width: auto;
+			}
+		}
+	}
+}

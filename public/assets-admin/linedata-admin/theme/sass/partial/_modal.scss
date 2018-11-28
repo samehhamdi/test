@@ -1,0 +1,35 @@
+.modal-content{
+	border: none;
+	border-radius: 0;
+}
+.edit-info{
+	margin-left: 20px;
+	padding-left: 20px;
+	border-left: 1px solid $dark-grey;
+}
+@media screen and (min-width: 992px){
+	.modal-lg {
+	    max-width: 1000px;
+	}
+}
+.task-links{
+	display: block;
+	background: $grey-1;
+	padding: 10px 5px;
+	margin-bottom: 10px;
+	a{
+		display: block;
+		margin-bottom: 5px;
+		font-size: 13px;
+		&:before{
+			content: "\f238";
+			font-family: "Material Design Icons";
+			font-size: 18px;
+			height: 15px;
+			line-height: 15px;
+			display: inline-block;
+			vertical-align: middle;
+			color: $red;
+		}
+	}
+}

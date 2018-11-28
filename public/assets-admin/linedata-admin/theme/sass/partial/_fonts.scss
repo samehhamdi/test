@@ -1,0 +1,130 @@
+$roboto: "Roboto";
+$roboto-c: "Roboto Condensed";
+$nexa-light: "NexaLight";
+$nexa-bold: "NexaBold";
+$gilory: "Gilroy";
+
+@font-face {
+  font-family: "NexaLight";
+  src: url("../fonts/nexa/NexaLight.eot");
+  src: url("../fonts/nexa/NexaLight.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/nexa/NexaLight.woff2") format("woff2"), url("../fonts/nexa/NexaLight.woff") format("woff"),
+    url("../fonts/nexa/NexaLight.ttf") format("truetype"), url("../fonts/nexa/NexaLight.svg#NexaLight") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NexaBold";
+  src: url("../fonts/nexa/NexaBold.eot");
+  src: url("../fonts/nexa/NexaBold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/nexa/NexaBold.woff2") format("woff2"), url("../fonts/nexa/NexaBold.woff") format("woff"),
+    url("../fonts/nexa/NexaBold.ttf") format("truetype"), url("../fonts/nexa/NexaBold.svg#NexaBold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy/Gilroy-Light.eot");
+  src: url("../fonts/Gilroy/Gilroy-Light.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Gilroy/Gilroy-Light.woff2") format("woff2"),
+    url("../fonts/Gilroy/Gilroy-Light.woff") format("woff"),
+    url("../fonts/Gilroy/Gilroy-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy/Gilroy-ExtraBold.eot");
+  src: url("../fonts/Gilroy/Gilroy-ExtraBold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Gilroy/Gilroy-ExtraBold.woff2") format("woff2"),
+    url("../fonts/Gilroy/Gilroy-ExtraBold.woff") format("woff"),
+    url("../fonts/Gilroy/Gilroy-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+body {
+  font-family: $roboto;
+  color: $dark-grey;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: $nexa-bold;
+  .light {
+    font-weight: $nexa-light;
+  }
+}
+
+h1,
+.h1 {
+  font-size: 2.2rem;
+}
+h2,
+.h2 {
+  font-size: 2rem;
+}
+h3,
+.h3 {
+  font-size: 1.7rem;
+}
+h4,
+.h4 {
+  font-size: 1.5rem;
+}
+h5,
+.h5 {
+  font-size: 1.3rem;
+}
+h6,
+.h6 {
+  font-size: 1rem;
+}
+
+.btn,
+button {
+  font-family: $roboto-c;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.nexa-bold {
+  font-family: $nexa-bold;
+}
+.nexa-light {
+  font-family: $nexa-light;
+}
+.roboto {
+  font-family: $roboto;
+}
+.ls-1 {
+  letter-spacing: 1px;
+}
+.ls-2 {
+  letter-spacing: 2px;
+}
+.ls-3 {
+  letter-spacing: 3px;
+}
+.ls-4 {
+  letter-spacing: 4px;
+}
+.small-caps {
+  font-variant: small-caps;
+}

@@ -1,0 +1,124 @@
+.tree {
+  & > .list {
+    list-style: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+    & > .item {
+      .item-inner {
+        display: block;
+        background-color: $grey-4;
+        margin-bottom: 4px;
+        padding: 10px 15px 10px 30px;
+        position: relative;
+        transition: transform 0.2s ease;
+        .title {
+          display: inline-block;
+          margin-left: 15px;
+          font-family: $nexa-bold;
+        }
+        &:hover {
+          // transform: translateX(3px);
+          .delete-link {
+            color: $red-dark;
+            &:hover {
+              color: $red;
+            }
+          }
+          .edit-link {
+              color: $blue-t-1;
+              &:hover {
+                color: $blue-t-med;
+            }
+          }
+        }
+      }
+      .actions {
+        display: inline-block;
+        color: $grey;
+      }
+      .disciplines {
+        display: none;
+        list-style: none;
+        padding: 3px 0 3px;
+        margin: 0 0 4px;
+        & > .item {
+          padding: 5px 25px 5px 35px;
+          position: relative;
+          background-color: $w;
+          font-family: "NexaBold";
+          font-size: 1rem;
+          margin: 0 15px 5px 30px;
+          transition: transform 0.2s ease;
+          border-radius: 5px;
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+          &:hover {
+            transform: translateX(3px);
+            .delete-link {
+                color: $red-dark;
+                &:hover {
+                    color: $red;
+                }
+            }
+            .edit-link {
+                color: $blue-t-1;
+                &:hover {
+                    color: $blue-t-med;
+                }
+            }
+          }
+          .dragHandler {
+            color: $grey;
+            transition: color 0.2s ease;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 30px;
+            cursor: move;
+            cursor: grab;
+            cursor: -moz-grab;
+            cursor: -webkit-grab;
+            &:focus,
+            &:active {
+              cursor: grabbing;
+              cursor: -moz-grabbing;
+              cursor: -webkit-grabbing;
+            }
+            .icon {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              will-change: transform;
+            }
+            &:hover {
+              color: $blue-t-1;
+            }
+          }
+        }
+      }
+      &.opened {
+        background-color: $grey-1;
+        .disciplines {
+            display: block;
+        }
+      }
+      &.hovered{
+        position: relative;
+        &:after{
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          box-shadow: inset 0 0 13px rgba(40, 165, 224, 0.5)
+        }
+        }
+    }
+  }
+}
+.ui-draggable-dragging{
+  z-index: 1000;
+}

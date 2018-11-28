@@ -1,0 +1,24 @@
+{
+  "name": "linedata_admin",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "okba.nouri@gmail.com"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1",
+    "jquery.nicescroll": "^3.7.6",
+    "seiyria-bootstrap-slider": "^10.2.2"
+  }
+}
