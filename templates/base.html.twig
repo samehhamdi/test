@@ -2,16 +2,79 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>{% block title %}Career studio{% endblock %}</title>
     {% block stylesheets %}
-        <link href="{{ asset('assets-admin/css/bootstrap.css') }}" type="text/css" rel="stylesheet"/>
-        <link href="{{ asset('assets-admin/css/bootstrap-grid.css') }}" type="text/css" rel="stylesheet"/>
-        <link href="{{ asset('assets-admin/css/bootstrap-reboot.css') }}" type="text/css" rel="stylesheet"/>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="{{ asset('assets-admin/linedata-admin/bower_components/bootstrap/dist/css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets-admin/linedata-admin/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css') }}">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&amp;subset=latin-ext" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=latin-ext" rel="stylesheet">
+
+        <!-- Icons -->
+        <link rel="stylesheet" href="{{ asset('assets-admin/linedata-admin/theme/vendor/icons-bank/css/icons.css') }}">
+
+        <!-- Wysiwyg -->
+        <link rel="stylesheet" href="{{ asset('assets-admin/linedata-admin/theme/vendor/summernote/dist/summernote-bs4.css') }}">
+
+        <!-- linedata-admin Main stylesheet -->
+        <link rel="stylesheet" href="{{ asset('assets-admin/linedata-admin/theme/css/main.css') }}">
     {% endblock %}
 </head>
 <body>
-{% block body %}{% endblock %}
+    <div id="wrapper">
+		<div id="menu-toggle"><span class="burger"></span></div>
+		<nav id="main-menu" class="bg-gradient">
+			<a id="logo" href="{{ path('index') }}">
+				<img src="{{ asset('assets-admin/linedata-admin/theme/images/logo.png') }}" alt="Linedata">
+			</a>
+			<ul class="mt-3">
+				<li>
+					<a href="{{ path('index') }}" class="active">
+						<i class="icon material-icons-dashboard icon-xs icon-shift-2"></i> 
+						Dashboard
+					</a>
+				</li>
+				<li>
+					<a href="{{ path('family_index') }}">
+						<i class="icon material-icons-blur_circular icon-xs icon-shift-2"></i> 
+						Job Families
+					</a>
+				</li>
+				<li>
+					<a href="{{ path('discipline_index') }}">
+						<i class="icon material-icons-work icon-xs icon-shift-2"></i> 
+						Disciplines
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="icon material-icons-directions_bike icon-xs icon-shift-2"></i> 
+						Skills / Competencies
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="icon material-icons-person_outline icon-xs icon-shift-2"></i> 
+						Profile
+					</a>
+				</li>
+			</ul>
+		</nav>
+        <div id="main">
+            {% block body %}{% endblock %}
+        </div><!-- #main -->
+    </div><!-- #wrapper -->
 {% block javascripts %}
-    <script src="{{ asset('assets-admin/js/bootstrap.js') }}"></script> {% endblock %}
+    <script src="{{ asset('assets-admin/linedata-admin/bower_components/jquery/dist/jquery.min.js') }}"></script>
+	<script src="{{ asset('assets-admin/linedata-admin/bower_components/jquery.nicescroll/dist/jquery.nicescroll.min.js') }}"></script>
+	<script src="{{ asset('assets-admin/linedata-admin/bower_components/bootstrap/assets/js/vendor/popper.min.js') }}"></script>
+	<script src="{{ asset('assets-admin/linedata-admin/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('assets-admin/linedata-admin/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js') }}"></script>
+	<script src="{{ asset('assets-admin/linedata-admin/theme/vendor/jquery-ui/jquery-ui.min.js') }}"></script>
+	<script src="{{ asset('assets-admin/linedata-admin/theme/vendor/summernote/dist/summernote-bs4.js') }}"></script>
+	<script src="{{ asset('assets-admin/linedata-admin/theme/js/main.js') }}"></script>
+{% endblock %}
 </body>
 </html>

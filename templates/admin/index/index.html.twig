@@ -1,73 +1,50 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello !{% endblock %}
+{% block title %}Dashboard | {{ parent() }}{% endblock %}
 
 {% block body %}
 
-
-    <div class="wrapper">
-        <a href="{{ path('family_new') }}">Create new family</a> ✅
-        <a href="{{ path('discipline_new') }}">Create new discipline</a> ✅
-        <a href="{{ path('skill_new') }}">Create new skill</a>
-        <table class="table">
-
-
+    <section class="container pt-5">
+        <div>
+            <h1 class="d-inline-block">Job families</h1>
+            <a href="{{ path('family_new') }}" class="text-blue" data-toggle="tooltip" title="Add new"><i class="icon icon-md material-icons-add_circle icon-shift-2"></i></a>
+        </div>
+        <p>
+            <span class="hint">Click on the job family name to show the list of disciplines.</span>
+            <span class="hint">You can also drag & drop each job family to change the display order.</span>
+        </p>
+        <div class="list-header text-right">
+            
+        </div>
+        <div class="tree">
+            <div class="list">
             {% for family in families %}
-                <tr>
-                    <td><h3>Family Title</h3></td>
-                    <td><h3>Family Description</h3></td>
-                </tr>
-                <tr>
-                    <td>
-                        {{ family.titleEn }}
-                    </td>
-                    <td>
-                        {{ family.DescriptionEn }}
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <table>
-                            <tr>
-                                <td><h4>Discipline Title</h4></td>
-                                <td><h4>Discipline Description</h4></td>
-                            </tr>
-                            {% for discipline in family.disciplines %}
-                                <tr>
-                                    <td>{{ discipline.titleEn }}</td>
-                                    <td>{{ discipline.DescriptionEn }}</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <table>
-                                            <tr>
-                                                <td><h5>Skill Title</h5></td>
-                                                <td><h5>Skill Description</h5></td>
-                                            </tr>
-                                            {% for skilld in discipline.disciplinesd %}
-                                                <tr>
-                                                    <td>{{ skilld.skill.titleEn }}</td>
-                                                    <td>{{ skilld.skill.DescriptionEn }}</td>
-                                                </tr>
-                                            {% else %}
-                                                <tr>
-                                                    <td colspan="6">no records found</td>
-                                                </tr>
-                                            {% endfor %}
-                                        </table>
-                                    </td>
-                                </tr>
-                            {% else %}
-                                <tr>
-                                    <td colspan="6">no records found</td>
-                                </tr>
+                <div class="item droppable">
+                    <div class="item-inner">
+                        <a href="#" class="title toggle-disciplies">{{ family.titleEn }}</a>
+                        <span class="actions float-right">
+                            <a href="{{ path('family_edit', {'id': family.id}) }}" class="edit-link"><i class="icon icon-sm mdi mdi-pencil-box"></i></a>
+                            <a href="#" class="delete-link" onclick="confirm('Are you sure ?');"><i class="icon icon-sm mdi mdi-delete"></i></a>
+                        </span>
+                    </div>
+                    <ul class="disciplines">
+                    {% for discipline in family.disciplines %}
+                        <li class="item draggable">
+                            <span class="dragHandler"><i class="icon mdi mdi-drag-vertical icon-sm"></i></span>
+                            <span class="actions float-right">
+                                <a href="{{ path('discipline_edit', {'id': discipline.id}) }}" class="edit-link"><i class="icon mdi mdi-pencil-box"></i></a>
+                                <a href="#" class="delete-link" onclick="confirm('Are you sure ?');"><i class="icon mdi mdi-delete"></i></a>
+                            </span>
+                            <span class="title">{{ discipline.titleEn }}</span>
+                            <div class="skills">
+                            {% for skillD in discipline.disciplinesd %}
+                                <a href="{{ path('skill_edit', {'id': skill.id}) }}" class="tag">{{ skillD.skill.titleEn }}</a>
                             {% endfor %}
-                        </table>
-                    </td>
-                </tr>
-
-
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             {% endfor %}
-        </table>
-    </div>
+
 {% endblock %}
