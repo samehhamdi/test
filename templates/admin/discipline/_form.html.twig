@@ -1,11 +1,41 @@
 {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
-
-   {{ form_label(form.titleEn) }} {{ form_widget(form.titleEn) }}{{ form_errors(form.titleEn) }}
-   {{ form_label(form.titleFr) }} {{ form_widget(form.titleFr) }}{{ form_errors(form.titleFr) }}
-   {{ form_label(form.descriptionEn) }}{{ form_widget(form.descriptionEn) }}{{ form_errors(form.descriptionEn) }}
-   {{ form_label(form.descriptionFr) }}{{ form_widget(form.descriptionFr) }}{{ form_errors(form.descriptionFr) }}
- {{ form_label(form.grade) }}{{ form_widget(form.grade) }}{{ form_errors(form.grade) }}
- {{ form_label(form.family) }}{{ form_widget(form.family) }}{{ form_errors(form.family) }}
+    <fieldset class="bg-grey-1 p-4">
+        <div class="row">
+            <div class="col-12 tab-content">
+                <p>
+                    {{ form_label(form.titleEn) }}
+                    {{ form_widget(form.titleEn) }}
+                    {{ form_errors(form.titleEn) }}
+                </p>
+                <p>
+                    {{ form_label(form.titleFr) }}
+                    {{ form_widget(form.titleFr) }}
+                    {{ form_errors(form.titleFr) }}
+                </p>
+                <p>
+                    {{ form_label(form.descriptionEn) }}
+                    {{ form_widget(form.descriptionEn) }}
+                    {{ form_errors(form.descriptionEn) }}
+                </p>
+                <p>
+                    {{ form_label(form.descriptionFr) }}
+                    {{ form_widget(form.descriptionFr) }}
+                    {{ form_errors(form.descriptionFr) }}
+                </p>
+                <p>
+                    {{ form_label(form.grade) }}
+                    {{ form_widget(form.grade) }}
+                    {{ form_errors(form.grade) }}
+                </p>
+                <p>
+                    {{ form_label(form.family) }}
+                    {{ form_widget(form.family) }}
+                    {{ form_errors(form.family) }}
+                </p>
+            </div>
+        </div>
+    </fieldset>
+   
 <b>{{ form_label(form.disciplinesd) }}</b> {{ form_widget(form.disciplinesd) }}{{ form_errors(form.disciplinesd) }}
 
 <ul id="disciplinesd"

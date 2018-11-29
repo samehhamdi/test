@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Discipline{% endblock %}
+{% block title %}New Discipline | {{ parent() }}{% endblock %}
 
 {% block body %}
-    <h1>Create new Discipline</h1>
-
-    {{ include('admin/discipline/_form.html.twig') }}
-
-    <a href="{{ path('discipline_index') }}">back to list</a>
+<section class="container mt-5">
+        <h1>Discipline</h1>
+    </section>
+    <section class="container mt-5 mb-5">
+        <h3 class="text-darkgrey">Create new</h3>
+        {{ include('admin/discipline/_form.html.twig') }}
+    </section>
 {% endblock %}
