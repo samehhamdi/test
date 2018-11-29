@@ -11,16 +11,18 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class DisciplineType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titleEn')
-            ->add('titleFr')
-            ->add('descriptionEn')
-            ->add('descriptionFr')
+            ->add('titleEn', TextType::class, array('attr' => array( 'class' => 'form-control')))
+            ->add('titleFr', TextType::class, array('attr' => array( 'class' => 'form-control')))
+            ->add('descriptionEn', TextareaType::class, array('attr' => array( 'class' => 'editor form-control')))
+            ->add('descriptionFr', TextareaType::class, array('attr' => array( 'class' => 'editor form-control')))
             ->add('grade', ChoiceType::class, array(
                     'label' => 'Level',
                     'choices' => array(
