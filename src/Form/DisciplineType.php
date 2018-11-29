@@ -34,6 +34,7 @@ class DisciplineType extends AbstractType
             ->add('family', EntityType::class, array(
                 'class' => Family::class,
                 'choice_label' => 'titleEn',
+                'attr' => array('class' => 'form-control')
             ))
             ->add('disciplinesd', CollectionType::class, array(
                 'entry_type' => DisciplineSkillLevelType::class,
