@@ -1,28 +1,35 @@
 {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
-
+    <ul class="nav nav-tabs justify-content-end">
+        <li class="nav-item"><a class="nav-link active" href="#en_tab" data-toggle="tab" role="tab" aria-controls="en_tab" aria-selected="true">En</a></li>
+        <li calss="nav-item"><a class="nav-link" href="#fr_tab" data-toggle="tab" role="tab" aria-controls="fr_tab" aria-selected="false">Fr</a></li>
+    </ul>
     <fieldset class="bg-grey-1 p-4">
         <div class="row">
-            <div class="col-12">
-                <p>
-                    {{ form_label(form.titleEn) }}
-                    {{ form_widget(form.titleEn) }}
-                    {{ form_errors(form.titleEn) }}
-                </p>
-                <p>
-                {{ form_label(form.titleFr) }}
-                    {{ form_widget(form.titleFr) }}
-                    {{ form_errors(form.titleFr) }}
-                </p>
-                <p>
-                    {{ form_label(form.descriptionEn) }}
-                    {{ form_widget(form.descriptionEn) }}
-                    {{ form_errors(form.descriptionEn) }}
-                </p>
-                <p>
-                    {{ form_label(form.descriptionFr) }}
-                    {{ form_widget(form.descriptionFr) }}
-                    {{ form_errors(form.descriptionFr) }}
-                </p>
+            <div class="col-12 tab-content">
+                <div class="tab-pane fade show active" id="en_tab" role="tabpanel" aria-labelledby="en-tab">
+                    <p>
+                        {{ form_label(form.titleEn) }}
+                        {{ form_widget(form.titleEn) }}
+                        {{ form_errors(form.titleEn) }}
+                    </p>
+                    <p>
+                        {{ form_label(form.descriptionEn) }}
+                        {{ form_widget(form.descriptionEn) }}
+                        {{ form_errors(form.descriptionEn) }}
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="fr_tab" role="tabpanel" aria-labelledby="fr-tab">
+                    <p>
+                        {{ form_label(form.titleFr) }}
+                        {{ form_widget(form.titleFr) }}
+                        {{ form_errors(form.titleFr) }}
+                    </p>
+                    <p>
+                        {{ form_label(form.descriptionFr) }}
+                        {{ form_widget(form.descriptionFr) }}
+                        {{ form_errors(form.descriptionFr) }}
+                    </p>
+                </div>
                 <p>
                     <b>{{ form_label(form.disciplines) }}</b>
                     {{ form_widget(form.disciplines) }}
@@ -36,11 +43,8 @@
         </ul>
         <a href="#" id="add_discipline" class="btn btn-default">Add Discipline</a>
         <br>
-        <button class="btn">{{ button_label|default('Save') }}</button>
+        <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
     </fieldset>
-
-
-
 {{ form_end(form) }}
 
 

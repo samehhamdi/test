@@ -17,8 +17,8 @@ class FamilyType extends AbstractType
         $builder
             ->add('titleEn', TextType::class, array('attr' => array( 'class' => 'form-control')))
             ->add('titleFr', TextType::class, array('attr' => array( 'class' => 'form-control')))
-            ->add('descriptionEn', TextareaType::class, array('attr' => array( 'class' => 'form-control')))
-            ->add('descriptionFr', TextareaType::class, array('attr' => array( 'class' => 'form-control')))
+            ->add('descriptionEn', TextareaType::class, array('attr' => array( 'class' => 'editor form-control')))
+            ->add('descriptionFr', TextareaType::class, array('attr' => array( 'class' => 'editor form-control')))
             ->add('disciplines', CollectionType::class, array(
                 'entry_type' => DisciplineType::class,
                 'allow_add' => true,

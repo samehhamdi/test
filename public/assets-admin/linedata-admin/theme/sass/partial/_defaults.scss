@@ -352,3 +352,16 @@ a.tag{
 .note-editor.note-frame .note-editing-area .note-editable{
   min-height: 200px;
 }
+
+.nav-link {
+    display: block;
+    padding: .3rem .7rem .2rem;
+    font-size: 0.8rem;
+    font-family: $nexa-bold;
+    &.active{
+      background: $grey-1;
+    }
+    &:hover{
+      color: $blue-t-med;
+    }
+}

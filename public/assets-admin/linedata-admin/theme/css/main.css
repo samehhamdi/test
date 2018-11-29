@@ -1043,4 +1043,17 @@ a.tag:hover {
   min-height: 200px;
 }
 
+.nav-link {
+  display: block;
+  padding: 0.3rem 0.7rem 0.2rem;
+  font-size: 0.8rem;
+  font-family: "NexaBold";
+}
+.nav-link.active {
+  background: #f1f4f7;
+}
+.nav-link:hover {
+  color: #229cdb;
+}
+
 /*# sourceMappingURL=main.css.map */
