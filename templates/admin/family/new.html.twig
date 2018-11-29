@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Family{% endblock %}
+{% block title %}New Family | {{ parent() }}{% endblock %}
 
 {% block body %}
-    <h1>Create new Family</h1>
-
-    {{ include('admin/family/_form.html.twig') }}
-
-    <a href="{{ path('family_index') }}">back to list</a>
+    <section class="container mt-5">
+        <h1>Job family</h1>
+    </section>
+    <section class="container mt-5 mb-5">
+        <h3 class="text-darkgrey">Create new</h3>
+        {{ include('admin/family/_form.html.twig') }}
+    </section>
 {% endblock %}

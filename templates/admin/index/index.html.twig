@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Dashboard | {{ parent() }}{% endblock %}
+{% block title %}{{ parent() }} | Dashboard{% endblock %}
 
 {% block body %}
 
@@ -38,7 +38,7 @@
                             <span class="title">{{ discipline.titleEn }}</span>
                             <div class="skills">
                             {% for skillD in discipline.disciplinesd %}
-                                <a href="{{ path('skill_edit', {'id': skill.id}) }}" class="tag">{{ skillD.skill.titleEn }}</a>
+                                <a href="{{ path('skill_edit', {'id': skillD.skill.id}) }}" class="tag">{{ skillD.skill.titleEn }}</a>
                             {% endfor %}
                             </div>
                         </li>

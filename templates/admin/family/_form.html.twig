@@ -1,19 +1,46 @@
 {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 
-   {{ form_label(form.titleEn) }} {{ form_widget(form.titleEn) }}{{ form_errors(form.titleEn) }}
-   {{ form_label(form.titleFr) }} {{ form_widget(form.titleFr) }}{{ form_errors(form.titleFr) }}
-   {{ form_label(form.descriptionEn) }}{{ form_widget(form.descriptionEn) }}{{ form_errors(form.descriptionEn) }}
-   {{ form_label(form.descriptionFr) }}{{ form_widget(form.descriptionFr) }}{{ form_errors(form.descriptionFr) }}
-<br/><b>{{ form_label(form.disciplines) }}</b> {{ form_widget(form.disciplines) }}{{ form_errors(form.disciplines) }}
+    <fieldset class="bg-grey-1 p-4">
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    {{ form_label(form.titleEn) }}
+                    {{ form_widget(form.titleEn) }}
+                    {{ form_errors(form.titleEn) }}
+                </p>
+                <p>
+                {{ form_label(form.titleFr) }}
+                    {{ form_widget(form.titleFr) }}
+                    {{ form_errors(form.titleFr) }}
+                </p>
+                <p>
+                    {{ form_label(form.descriptionEn) }}
+                    {{ form_widget(form.descriptionEn) }}
+                    {{ form_errors(form.descriptionEn) }}
+                </p>
+                <p>
+                    {{ form_label(form.descriptionFr) }}
+                    {{ form_widget(form.descriptionFr) }}
+                    {{ form_errors(form.descriptionFr) }}
+                </p>
+                <p>
+                    <b>{{ form_label(form.disciplines) }}</b>
+                    {{ form_widget(form.disciplines) }}
+                    {{ form_errors(form.disciplines) }}
+                </p>
+            </div>
+        </div>
+        <ul id="disciplines"
+            data-prototype="{{ form_widget(form.disciplines.vars.prototype)|e }}"
+            data-widget-levels="{{ '<li></li>'|e }}">
+        </ul>
+        <a href="#" id="add_discipline" class="btn btn-default">Add Discipline</a>
+        <br>
+        <button class="btn">{{ button_label|default('Save') }}</button>
+    </fieldset>
 
-<ul id="disciplines"
-    data-prototype="{{ form_widget(form.disciplines.vars.prototype)|e }}"
-    data-widget-levels="{{ '<li></li>'|e }}">
-     
-</ul>
-<a href="#" id="add_discipline" class="btn btn-default">Add Discipline</a>
-<br>
-<button class="btn">{{ button_label|default('Save') }}</button>
+
+
 {{ form_end(form) }}
 
 
