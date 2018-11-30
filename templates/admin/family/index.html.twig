@@ -1,40 +1,50 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Family index{% endblock %}
+{% block title %}{{ parent() }} | Job families{% endblock %}
 
 {% block body %}
-    <h1>Family index</h1>
 
-    <table class="table">
-        <thead>
-        <tr>
-
-            <th>Title</th>
-            <th>Description</th>
-            <!--<th>Status</th>-->
-            <th>DateCreated</th>
-            <th>actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for family in families %}
-            <tr>
-
-                <td>{{ family.titleEn }}</td>
-                <td>{{ family.descriptionEn }}</td>
-                <!--<td>{{ family.status ? 'Active' : 'Not Active' }}</td>-->
-                <td>{{ family.dateCreated ? family.dateCreated|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('family_edit', {'id': family.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('family_new') }}">Create new</a>
+    <section class="container pt-5">
+        <div>
+            <h1 class="d-inline-block">Job families</h1>
+            <a href="{{ path('family_new') }}" class="text-blue" data-toggle="tooltip" title="Add new"><i class="icon icon-md material-icons-add_circle icon-shift-2"></i></a>
+        </div>
+        <p>
+            <span class="hint">Click on the job family name to show the list of disciplines.</span>
+            <span class="hint">You can also drag & drop each job family to change the display order.</span>
+        </p>
+        <div class="list-header text-right">
+            
+        </div>
+        <div class="tree">
+            <div class="list">
+            {% for family in families %}
+                <div class="item droppable">
+                    <div class="item-inner">
+                        <a href="#" class="title toggle-disciplies">{{ family.titleEn }}</a>
+                        <span class="actions float-right">
+                            <a href="{{ path('family_edit', {'id': family.id}) }}" class="edit-link"><i class="icon icon-sm mdi mdi-pencil-box"></i></a>
+                            <a href="#" class="delete-link" onclick="confirm('Are you sure ?');"><i class="icon icon-sm mdi mdi-delete"></i></a>
+                        </span>
+                    </div>
+                    <ul class="disciplines">
+                    {% for discipline in family.disciplines %}
+                        <li class="item draggable">
+                            <span class="dragHandler"><i class="icon mdi mdi-drag-vertical icon-sm"></i></span>
+                            <span class="actions float-right">
+                                <a href="{{ path('discipline_edit', {'id': discipline.id}) }}" class="edit-link"><i class="icon mdi mdi-pencil-box"></i></a>
+                                <a href="#" class="delete-link" onclick="confirm('Are you sure ?');"><i class="icon mdi mdi-delete"></i></a>
+                            </span>
+                            <span class="title">{{ discipline.titleEn }}</span>
+                            <div class="skills">
+                            {% for skillD in discipline.disciplinesd %}
+                                <a href="{{ path('skill_edit', {'id': skillD.skill.id}) }}" class="tag">{{ skillD.skill.titleEn }}</a>
+                            {% endfor %}
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+    </section>
 {% endblock %}
