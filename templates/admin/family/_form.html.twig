@@ -66,6 +66,10 @@
         $('#add_discipline').click(function (e) {
             addDiscipline($container);
 
+            $("body, main-menu")
+            .getNiceScroll()
+            .resize();
+
             e.preventDefault();
             return false;
         });
