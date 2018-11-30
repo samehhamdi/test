@@ -19,11 +19,13 @@ textarea.form-control {
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2), 0 2px 0 0 $blue-t-2;
   }
 }
-select{
-  &.form-control{
-    height: auto !important;
-    padding-top: 1px;
-    padding-bottom: 1px;
+.tree{
+  select{
+    &.form-control{
+      height: auto !important;
+      padding-top: 1px;
+      padding-bottom: 1px;
+    }
   }
 }
 /* buttons */

@@ -439,7 +439,7 @@ textarea.form-control:focus {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2), 0 2px 0 0 #1cb7d0;
 }
 
-select.form-control {
+.tree select.form-control {
   height: auto !important;
   padding-top: 1px;
   padding-bottom: 1px;
