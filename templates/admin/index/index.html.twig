@@ -6,45 +6,65 @@
 
     <section class="container pt-5">
         <div>
-            <h1 class="d-inline-block">Job families</h1>
-            <a href="{{ path('family_new') }}" class="text-blue" data-toggle="tooltip" title="Add new"><i class="icon icon-md material-icons-add_circle icon-shift-2"></i></a>
-        </div>
-        <p>
-            <span class="hint">Click on the job family name to show the list of disciplines.</span>
-            <span class="hint">You can also drag & drop each job family to change the display order.</span>
-        </p>
-        <div class="list-header text-right">
-            
-        </div>
-        <div class="tree">
-            <div class="list">
-            {% for family in families %}
-                <div class="item droppable">
-                    <div class="item-inner">
-                        <a href="#" class="title toggle-disciplies">{{ family.titleEn }}</a>
-                        <span class="actions float-right">
-                            <a href="{{ path('family_edit', {'id': family.id}) }}" class="edit-link"><i class="icon icon-sm mdi mdi-pencil-box"></i></a>
-                            <a href="#" class="delete-link" onclick="confirm('Are you sure ?');"><i class="icon icon-sm mdi mdi-delete"></i></a>
-                        </span>
-                    </div>
-                    <ul class="disciplines">
-                    {% for discipline in family.disciplines %}
-                        <li class="item draggable">
-                            <span class="dragHandler"><i class="icon mdi mdi-drag-vertical icon-sm"></i></span>
-                            <span class="actions float-right">
-                                <a href="{{ path('discipline_edit', {'id': discipline.id}) }}" class="edit-link"><i class="icon mdi mdi-pencil-box"></i></a>
-                                <a href="#" class="delete-link" onclick="confirm('Are you sure ?');"><i class="icon mdi mdi-delete"></i></a>
-                            </span>
-                            <span class="title">{{ discipline.titleEn }}</span>
-                            <div class="skills">
-                            {% for skillD in discipline.disciplinesd %}
-                                <a href="{{ path('skill_edit', {'id': skillD.skill.id}) }}" class="tag">{{ skillD.skill.titleEn }}</a>
-                            {% endfor %}
-                            </div>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            {% endfor %}
+            <h1 class="d-inline-block">Dashboard</h1>
+       </div>
+       <div>
+        <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+       </div>
+     </section>
 
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script>
+
+Highcharts.chart('container', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: '<h3>Vue globale</h3>'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.y}</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                style: {
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Total',
+        colorByPoint: true,
+        data: [{
+            name: 'Families',
+            y: parseFloat('{{ families|length }}'),
+            color: '#e40134'
+        }, {
+            name: 'Disciplines',
+            y: parseFloat('{{ disciplines|length }}'),
+            color: '#333'
+        }, {
+            name: 'Skills',
+            y: parseFloat('{{ skills|length }}'),
+            color: '#229cdb'
+        }]
+    }]
+});
+</script>
 {% endblock %}
