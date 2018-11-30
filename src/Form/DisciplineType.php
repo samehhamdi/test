@@ -29,6 +29,7 @@ class DisciplineType extends AbstractType
                         '0' => 0, '1' => 1, '2' => 2, '3' => 3, '4' => 4, '5' => 5, '6' => 6, '7', 7, '8' => 8),
                     'multiple' => true,
                     'expanded' => true,
+                    'attr' => array('class' => 'checkbox-group horizontal-group')
                 )
             )
             ->add('family', EntityType::class, array(

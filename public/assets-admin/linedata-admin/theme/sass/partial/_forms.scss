@@ -59,13 +59,10 @@ textarea.form-control {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    & > span {
-      width: 100%;
-      margin: 0 1px;
-    }
     label {
       display: block;
-      // width: 80px;
+      width: 100%;
+      margin: 0 1px;
       height: 80px;
       border: 2px solid $grey-2;
       background-color: $w;
@@ -107,13 +104,10 @@ textarea.form-control {
   &.horizontal-group {
     display: flex;
     justify-content: space-between;
-    & > span {
-      width: 100%;
-      margin: 0 1px;
-    }
     label {
       display: block;
-      // width: 80px;
+      width: 100%;
+      margin: 0 1px;
       height: 80px;
       border: 2px solid $grey-2;
       background-color: $w;

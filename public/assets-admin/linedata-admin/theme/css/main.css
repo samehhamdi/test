@@ -479,12 +479,10 @@ textarea.form-control:focus {
   justify-content: space-between;
   width: 100%;
 }
-.checkbox-group.horizontal-group > span {
-  width: 100%;
-  margin: 0 1px;
-}
 .checkbox-group.horizontal-group label {
   display: block;
+  width: 100%;
+  margin: 0 1px;
   height: 80px;
   border: 2px solid #dddfe0;
   background-color: #fff;
@@ -521,12 +519,10 @@ textarea.form-control:focus {
   display: flex;
   justify-content: space-between;
 }
-.radio-group.horizontal-group > span {
-  width: 100%;
-  margin: 0 1px;
-}
 .radio-group.horizontal-group label {
   display: block;
+  width: 100%;
+  margin: 0 1px;
   height: 80px;
   border: 2px solid #dddfe0;
   background-color: #fff;
