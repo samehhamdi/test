@@ -53,13 +53,16 @@ Highcharts.chart('container', {
         colorByPoint: true,
         data: [{
             name: 'Families',
-            y: parseFloat('{{ families|length }}')
+            y: parseFloat('{{ families|length }}'),
+            color: '#e40134'
         }, {
             name: 'Disciplines',
-            y: parseFloat('{{ disciplines|length }}')
+            y: parseFloat('{{ disciplines|length }}'),
+            color: '#333'
         }, {
             name: 'Skills',
-            y: parseFloat('{{ skills|length }}')
+            y: parseFloat('{{ skills|length }}'),
+            color: '#229cdb'
         }]
     }]
 });

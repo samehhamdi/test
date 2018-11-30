@@ -78,30 +78,6 @@ class Skill
         return $this->id;
     }
 
-    public function getTilte(): ?string
-    {
-        return $this->tilte;
-    }
-
-    public function setTilte(string $tilte): self
-    {
-        $this->tilte = $tilte;
-
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): self
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
     public function getSkilltype(): ?string
     {
         return $this->skilltype;
