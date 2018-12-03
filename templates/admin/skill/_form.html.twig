@@ -1,5 +1,7 @@
 {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
-
+<fieldset class="bg-grey-1 p-4">
+        <div class="row">
+            <div class="col-12 tab-content">
     {{ form_label(form.titleEn) }} {{ form_widget(form.titleEn) }}{{ form_errors(form.titleEn) }}
    {{ form_label(form.titleFr) }} {{ form_widget(form.titleFr) }}{{ form_errors(form.titleFr) }}
    {{ form_label(form.descriptionEn) }}{{ form_widget(form.descriptionEn) }}{{ form_errors(form.descriptionEn) }}
@@ -16,7 +18,9 @@
 <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
 
-
+</div>
+</div>
+</section>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <script type="text/javascript">

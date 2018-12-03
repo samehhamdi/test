@@ -1,43 +1,34 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Discipline index{% endblock %}
+{% block title %}{{ parent() }} | Disciplines{% endblock %}
 
 {% block body %}
-    <h1>Discipline index</h1>
-
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <!--<th>Status</th>-->
-            <th>DateCreated</th>
-            <th>Level</th>
-            <th>Family</th>
-            <th>actions</th>
-        </tr>
-        </thead>
-        <tbody>
+    <section class="container pt-5">
+        <div>
+            <h1 class="d-inline-block">Disciplines</h1>
+            <a href="{{ path('discipline_new') }}" class="text-blue" data-toggle="tooltip" title="Add new"><i class="icon icon-md material-icons-add_circle icon-shift-2"></i></a>
+        </div>
+        <div class="list-header text-right">
+            
+        </div>
+        <div class="tree">
+            <div class="list">
         {% for discipline in disciplines %}
-            <tr>
-                <td>{{ discipline.titleEn }}</td>
-                <td>{{ discipline.descriptionEn }}</td>
-                <!-- <td>{{ discipline.status ? 'Active' : 'Not Active' }}</td>-->
-                <td>{{ discipline.dateCreated ? discipline.dateCreated|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ discipline.grade ? discipline.grade|join(', ') : '' }}</td>
-                <td>{{ discipline.family.titleEn }}</td>
-                <td>
-                    <a href="{{ path('discipline_edit', {'id': discipline.id}) }}">edit</a>
-
-                </td>
-            </tr>
+        <div class="item">
+            <div class="item-inner">
+                <a href="#" class="title toggle-disciplies">{{ discipline.titleEn }}</a>
+                <span class="actions float-right">
+                    <a href="{{ path('discipline_edit', {'id': discipline.id}) }}" class="edit-link"><i class="icon icon-sm mdi mdi-pencil-box"></i></a>
+                    <a href="#" class="delete-link" onclick="confirm('Are you sure ?');"><i class="icon icon-sm mdi mdi-delete"></i></a>
+                </span>
+            </div>
+        </div>
         {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
+        <p>
+            <span class="hint">no records found</span>
+        </p>
         {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('discipline_new') }}">Create new</a>
+        </div>
+    </div>
+</section>
 {% endblock %}
