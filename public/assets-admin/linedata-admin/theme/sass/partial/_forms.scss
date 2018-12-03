@@ -19,11 +19,13 @@ textarea.form-control {
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2), 0 2px 0 0 $blue-t-2;
   }
 }
-select{
-  &.form-control{
-    height: auto !important;
-    padding-top: 1px;
-    padding-bottom: 1px;
+.tree{
+  select{
+    &.form-control{
+      height: auto !important;
+      padding-top: 1px;
+      padding-bottom: 1px;
+    }
   }
 }
 /* buttons */
@@ -57,13 +59,10 @@ select{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    & > span {
-      width: 100%;
-      margin: 0 1px;
-    }
     label {
       display: block;
-      // width: 80px;
+      width: 100%;
+      margin: 0 1px;
       height: 80px;
       border: 2px solid $grey-2;
       background-color: $w;
@@ -105,13 +104,10 @@ select{
   &.horizontal-group {
     display: flex;
     justify-content: space-between;
-    & > span {
-      width: 100%;
-      margin: 0 1px;
-    }
     label {
       display: block;
-      // width: 80px;
+      width: 100%;
+      margin: 0 1px;
       height: 80px;
       border: 2px solid $grey-2;
       background-color: $w;

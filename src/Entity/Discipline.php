@@ -10,7 +10,10 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={"get"={"method"="GET"}},
+ *     itemOperations={"get"={"method"="GET"}}
+ * )
  * @ORM\Entity(repositoryClass="App\Repository\DisciplineRepository")
  */
 class Discipline

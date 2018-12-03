@@ -439,7 +439,7 @@ textarea.form-control:focus {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2), 0 2px 0 0 #1cb7d0;
 }
 
-select.form-control {
+.tree select.form-control {
   height: auto !important;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -479,12 +479,10 @@ select.form-control {
   justify-content: space-between;
   width: 100%;
 }
-.checkbox-group.horizontal-group > span {
-  width: 100%;
-  margin: 0 1px;
-}
 .checkbox-group.horizontal-group label {
   display: block;
+  width: 100%;
+  margin: 0 1px;
   height: 80px;
   border: 2px solid #dddfe0;
   background-color: #fff;
@@ -521,12 +519,10 @@ select.form-control {
   display: flex;
   justify-content: space-between;
 }
-.radio-group.horizontal-group > span {
-  width: 100%;
-  margin: 0 1px;
-}
 .radio-group.horizontal-group label {
   display: block;
+  width: 100%;
+  margin: 0 1px;
   height: 80px;
   border: 2px solid #dddfe0;
   background-color: #fff;
