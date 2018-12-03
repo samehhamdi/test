@@ -76,10 +76,15 @@ class Discipline
      */
     private $grade;
 
+
+
     public function __construct()
     {
         $this->disciplinesd = new ArrayCollection();
+        $this->DisciplinesLevels = new ArrayCollection();
     }
+
+
 
 
     public function getId(): ?int
@@ -213,6 +218,8 @@ class Discipline
 
         return $this;
     }
+
+
 
 
 }

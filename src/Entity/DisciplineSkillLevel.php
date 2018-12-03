@@ -48,6 +48,15 @@ class DisciplineSkillLevel
      */
     private $discipline;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $disciplineLevel;
+
+
+
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -112,4 +121,22 @@ class DisciplineSkillLevel
 
         return $this;
     }
+
+    public function getDisciplineLevel(): ?int
+    {
+        return $this->disciplineLevel;
+    }
+
+    public function setDisciplineLevel(int $disciplineLevel): self
+    {
+        $this->disciplineLevel = $disciplineLevel;
+
+        return $this;
+    }
+
+
+
+
+
+
 }

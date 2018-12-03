@@ -7,7 +7,8 @@
         "ext-iconv": "*",
         "api-platform/api-pack": "^1.1",
         "doctrine/doctrine-fixtures-bundle": "^3.0",
-
+        "nelmio/api-doc-bundle": "^2.2",
+        "sensio/framework-extra-bundle": "^5.2",
         "symfony/asset": "4.1.*",
         "symfony/console": "4.1.*",
         "symfony/flex": "^1.1",
@@ -18,9 +19,12 @@
         "symfony/orm-pack": "^1.0",
         "symfony/profiler-pack": "^1.0",
         "symfony/security-csrf": "4.1.*",
+        "symfony/swiftmailer-bundle": "^3.2",
+        "symfony/templating": "4.1.*",
         "symfony/twig-bundle": "4.1.*",
         "symfony/validator": "4.1.*",
-        "symfony/yaml": "4.1.*"
+        "symfony/yaml": "4.1.*",
+        "webonyx/graphql-php": "^0.13.0"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.8",
