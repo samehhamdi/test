@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="459c9823-25dc-4d91-ae79-7abd45e2524b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/CareerStudioSymphony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CareerStudioSymphony.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/api_platform.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/api_platform.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Discipline.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Discipline.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/DisciplineSkillLevel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/DisciplineSkillLevel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Family.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Family.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/DisciplineSkillLevelType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/DisciplineSkillLevelType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,9 +94,9 @@
           <entry key="env" value="20" />
           <entry key="json" value="24" />
           <entry key="log" value="2" />
-          <entry key="php" value="3086" />
+          <entry key="php" value="3087" />
           <entry key="twig" value="2440" />
-          <entry key="txt" value="197" />
+          <entry key="txt" value="291" />
           <entry key="yaml" value="52" />
           <entry key="yml" value="18" />
         </counts>
@@ -116,8 +104,8 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="24" />
-          <entry key="PHP" value="3086" />
-          <entry key="PLAIN_TEXT" value="219" />
+          <entry key="PHP" value="3087" />
+          <entry key="PLAIN_TEXT" value="313" />
           <entry key="Twig" value="2440" />
           <entry key="YAML" value="70" />
         </counts>
@@ -149,11 +137,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Entity/Discipline.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="74" column="35" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="35" />
+              <caret line="74" column="30" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
               <folding>
                 <element signature="e#30#74#0#PHP" expanded="true" />
               </folding>
@@ -165,7 +153,7 @@
         <entry file="file://$PROJECT_DIR$/src/Form/SkillType.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="27" column="14" selection-start-line="22" selection-start-column="12" selection-end-line="27" selection-end-column="14" />
+              <caret line="28" column="14" selection-start-line="23" selection-start-column="12" selection-end-line="28" selection-end-column="14" />
               <folding>
                 <element signature="e#28#49#0#PHP" expanded="true" />
               </folding>
@@ -176,13 +164,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/DisciplineSkillLevel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="53" column="28" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="28" />
+            <state relative-caret-position="273">
+              <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Form/DisciplineSkillLevelType.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
@@ -299,9 +287,9 @@
         <option value="$PROJECT_DIR$/src/Controller/Admin/FamilySpecial.php" />
         <option value="$PROJECT_DIR$/src/Entity/Family.php" />
         <option value="$PROJECT_DIR$/config/packages/api_platform.yaml" />
+        <option value="$PROJECT_DIR$/src/Form/DisciplineSkillLevelType.php" />
         <option value="$PROJECT_DIR$/src/Entity/DisciplineSkillLevel.php" />
         <option value="$PROJECT_DIR$/src/Entity/Discipline.php" />
-        <option value="$PROJECT_DIR$/src/Form/DisciplineSkillLevelType.php" />
       </list>
     </option>
   </component>
@@ -510,7 +498,7 @@
       <workItem from="1542793389798" duration="1146000" />
       <workItem from="1542796687518" duration="1280000" />
       <workItem from="1542806712171" duration="62408000" />
-      <workItem from="1543305352210" duration="69334000" />
+      <workItem from="1543305352210" duration="70086000" />
     </task>
     <task id="LOCAL-00001" summary="21-11-2018 commit">
       <created>1542819953712</created>
@@ -596,17 +584,24 @@
       <option name="project" value="LOCAL" />
       <updated>1543821325224</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add new field disciplineLevel on DisciplineSkillLevel Entity&#10;add graphql&#10;add api/doc">
+      <created>1543848509400</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1543848509400</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134168000" />
+    <option name="totallyTimeSpent" value="134920000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17110874" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17110874" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -618,7 +613,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49733475" visible="true" weight="0.35427952" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49733475" visible="true" weight="0.35427952" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4989339" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5026652" side_tool="true" visible="true" weight="0.35427952" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -701,7 +696,8 @@
     <MESSAGE value="Merge branch 'master' of gitlab.linedata.com:stouati/Career-studio&#10;&#10;# Conflicts:&#10;#&#9;.env&#10;#&#9;composer.lock&#10;#&#9;config/bundles.php&#10;#&#9;src/Entity/Level.php&#10;#&#9;src/Entity/Skill.php" />
     <MESSAGE value="fix entities api" />
     <MESSAGE value="add nelmio bundle&#10;correct level entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="add nelmio bundle&#10;correct level entity" />
+    <MESSAGE value="add new field disciplineLevel on DisciplineSkillLevel Entity&#10;add graphql&#10;add api/doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new field disciplineLevel on DisciplineSkillLevel Entity&#10;add graphql&#10;add api/doc" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/assets-admin/linedata-admin/theme/js/main.js">
@@ -1000,13 +996,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/DisciplineSkillLevel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="53" column="28" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/LevelType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1016,20 +1005,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Discipline.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="74" column="35" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="35" />
-          <folding>
-            <element signature="e#30#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/SkillType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="27" column="14" selection-start-line="22" selection-start-column="12" selection-end-line="27" selection-end-column="14" />
+          <caret line="28" column="14" selection-start-line="23" selection-start-column="12" selection-end-line="28" selection-end-column="14" />
           <folding>
             <element signature="e#28#49#0#PHP" expanded="true" />
           </folding>
@@ -1042,6 +1021,23 @@
           <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
           <folding>
             <element signature="e#28#64#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/DisciplineSkillLevel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Discipline.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="74" column="30" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
+          <folding>
+            <element signature="e#30#74#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

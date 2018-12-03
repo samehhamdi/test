@@ -49,6 +49,7 @@ class DisciplineSkillLevel
     private $discipline;
 
     /**
+     * @ORM\Id()
      * @ORM\Column(type="integer")
      */
     private $disciplineLevel;
