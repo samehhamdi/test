@@ -39,6 +39,7 @@ class DisciplineController extends AbstractController
             $discipline->setDateCreated((\DateTime::createFromFormat('Y-m-d', date('Y-m-d'))));
             foreach ($discipline->getDisciplinesd() as $key => $disciplined) {
                 $disciplined->setDateCreated((\DateTime::createFromFormat('Y-m-d', date('Y-m-d'))));
+                $disciplined->setJobCode(substr($discipline->getTitleEn(),0,3).$disciplined->getDisciplineLevel());
             }
             $em->persist($discipline);
             $em->flush();
@@ -62,6 +63,10 @@ class DisciplineController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            foreach ($discipline->getDisciplinesd() as $key => $disciplined) {
+                $disciplined->setDateCreated((\DateTime::createFromFormat('Y-m-d', date('Y-m-d'))));
+                $disciplined->setJobCode(substr($discipline->getTitleEn(),0,3).'0'.$disciplined->getDisciplineLevel());
+            }
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('discipline_index', ['id' => $discipline->getId()]);

@@ -54,6 +54,11 @@ class DisciplineSkillLevel
      */
     private $disciplineLevel;
 
+    /**
+     * @ORM\Column(type="string", length=10)
+     */
+    private $jobCode;
+
 
 
 
@@ -131,6 +136,18 @@ class DisciplineSkillLevel
     public function setDisciplineLevel(int $disciplineLevel): self
     {
         $this->disciplineLevel = $disciplineLevel;
+
+        return $this;
+    }
+
+    public function getJobCode(): ?string
+    {
+        return $this->jobCode;
+    }
+
+    public function setJobCode(string $jobCode): self
+    {
+        $this->jobCode = $jobCode;
 
         return $this;
     }
