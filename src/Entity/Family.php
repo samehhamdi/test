@@ -15,7 +15,9 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ApiResource(
  *     collectionOperations={"get"={"method"="GET"}},
- *     itemOperations={"get"={"method"="GET"}},
+ *     itemOperations={"get"={"method"="GET"},
+ *    "special"={"route_name"="book_special"},
+ *     }
  * )
  * @ORM\Entity(repositoryClass="App\Repository\FamilyRepository")
  */
