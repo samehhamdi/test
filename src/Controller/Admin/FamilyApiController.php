@@ -23,6 +23,6 @@ class FamilyApiController
      */
     public function special(Family $family)
     {
-        return array('0' => 'yes','1'=>'No');
+        return $family->getDescriptionFr();
     }
 }

@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="459c9823-25dc-4d91-ae79-7abd45e2524b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/FamilyApiController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Family.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Family.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/FamilyApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/FamilyApiController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,14 +66,14 @@
           <entry key="gitignore" value="4" />
           <entry key="ini" value="1" />
           <entry key="js" value="2" />
-          <entry key="json" value="11" />
+          <entry key="json" value="12" />
           <entry key="lock" value="2" />
           <entry key="log" value="3" />
           <entry key="md" value="2" />
           <entry key="neon" value="1" />
           <entry key="php" value="159" />
           <entry key="twig" value="98" />
-          <entry key="yaml" value="33" />
+          <entry key="yaml" value="34" />
           <entry key="yml" value="1" />
         </counts>
       </usages-collector>
@@ -81,14 +81,14 @@
         <counts>
           <entry key="CSS" value="2" />
           <entry key="Ini" value="1" />
-          <entry key="JSON" value="12" />
+          <entry key="JSON" value="13" />
           <entry key="JavaScript" value="2" />
           <entry key="Markdown" value="2" />
           <entry key="PHP" value="159" />
           <entry key="PLAIN_TEXT" value="17" />
           <entry key="Twig" value="98" />
           <entry key="XML" value="1" />
-          <entry key="YAML" value="34" />
+          <entry key="YAML" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -96,9 +96,9 @@
           <entry key="env" value="20" />
           <entry key="json" value="24" />
           <entry key="log" value="2" />
-          <entry key="php" value="3335" />
+          <entry key="php" value="3356" />
           <entry key="twig" value="2440" />
-          <entry key="txt" value="317" />
+          <entry key="txt" value="351" />
           <entry key="yaml" value="157" />
           <entry key="yml" value="18" />
         </counts>
@@ -106,8 +106,8 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="24" />
-          <entry key="PHP" value="3335" />
-          <entry key="PLAIN_TEXT" value="339" />
+          <entry key="PHP" value="3356" />
+          <entry key="PLAIN_TEXT" value="373" />
           <entry key="Twig" value="2440" />
           <entry key="YAML" value="175" />
         </counts>
@@ -116,11 +116,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/Admin/FamilyApiController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+            <state relative-caret-position="340">
+              <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
               <folding>
                 <element signature="e#40#62#0#PHP" expanded="true" />
               </folding>
@@ -129,33 +129,30 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/packages/translation.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/Family.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="18" column="28" selection-start-line="18" selection-end-line="19" />
+              <caret line="18" column="28" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="28" />
               <folding>
                 <element signature="e#29#73#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="18" selection-start-line="3" selection-end-line="3" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Admin/DisciplineController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-              <folding>
-                <element signature="e#40#66#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -229,9 +226,9 @@
         <option value="$PROJECT_DIR$/src/Entity/DisciplineSkillLevel.php" />
         <option value="$PROJECT_DIR$/src/Entity/Discipline.php" />
         <option value="$PROJECT_DIR$/src/Controller/Admin/DisciplineController.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Family.php" />
         <option value="$PROJECT_DIR$/config/routes.yaml" />
         <option value="$PROJECT_DIR$/src/Controller/Admin/FamilyApiController.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Family.php" />
       </list>
     </option>
   </component>
@@ -372,11 +369,6 @@
             <path>
               <item name="CareerStudioSymphony" type="b2602c69:ProjectViewProjectNode" />
               <item name="CareerStudioSymphony" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CareerStudioSymphony" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CareerStudioSymphony" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -389,7 +381,8 @@
               <item name="CareerStudioSymphony" type="b2602c69:ProjectViewProjectNode" />
               <item name="CareerStudioSymphony" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -440,7 +433,7 @@
       <workItem from="1542793389798" duration="1146000" />
       <workItem from="1542796687518" duration="1280000" />
       <workItem from="1542806712171" duration="62408000" />
-      <workItem from="1543305352210" duration="80377000" />
+      <workItem from="1543305352210" duration="84562000" />
     </task>
     <task id="LOCAL-00001" summary="21-11-2018 commit">
       <created>1542819953712</created>
@@ -547,15 +540,21 @@
       <option name="project" value="LOCAL" />
       <updated>1543851028540</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add custom action to Api Platform">
+      <created>1543939266000</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1543939266001</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145211000" />
+    <option name="totallyTimeSpent" value="149396000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17110874" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -654,14 +653,10 @@
     <MESSAGE value="add nelmio bundle&#10;correct level entity" />
     <MESSAGE value="add new field disciplineLevel on DisciplineSkillLevel Entity&#10;add graphql&#10;add api/doc" />
     <MESSAGE value="add job code to discipline" />
-    <option name="LAST_COMMIT_MESSAGE" value="add job code to discipline" />
+    <MESSAGE value="Add custom action to Api Platform" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add custom action to Api Platform" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/assets-admin/linedata-admin/theme/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2295" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -852,13 +847,6 @@
     <entry file="file://$PROJECT_DIR$/src/Controller/Admin/FamilySpecial.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/framework.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -977,15 +965,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="18" selection-start-line="3" selection-end-line="3" selection-end-column="18" />
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Family.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="18" column="28" selection-start-line="18" selection-end-line="19" />
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="28" />
           <folding>
             <element signature="e#29#73#0#PHP" expanded="true" />
           </folding>
@@ -994,11 +982,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/Admin/FamilyApiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+        <state relative-caret-position="340">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
           <folding>
             <element signature="e#40#62#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/translation.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
