@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Discipline;
 use App\Entity\Skill;
+use App\Repository\FamilyRepository;
 use App\Repository\SkillRepository;
 use App\Form\DisciplineType;
 use App\Repository\DisciplineRepository;
@@ -93,5 +94,22 @@ class DisciplineController extends AbstractController
         }
 
         return $this->redirectToRoute('discipline_index');
+    }
+
+
+    /**
+     * @Route("/{id}/updateFamily", name="update_discipline_family", methods="GET")
+     */
+    public function updateFamily(Request $request, Discipline $discipline, FamilyRepository $familyRepo): Response
+    {
+        $familyId = $request->get('familyID');
+        if( $family = $familyRepo->find($familyId) ) {
+            $discipline->setFamily($family);
+            $this->getDoctrine()->getManager()->flush();
+            return $this->json(array('response' => true));
+        }
+        else {
+            return $this->json(array('response' => false));
+        }
     }
 }
