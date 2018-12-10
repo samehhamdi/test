@@ -559,6 +559,24 @@ textarea.form-control:focus {
   color: #fff;
 }
 
+/* Alerts */
+.alert {
+  border: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: "NexaLight";
+  border-left: 2px solid;
+  box-shadow: 3px 2px 3px 0px rgba(0, 0, 0, 0.2);
+}
+.alert strong {
+  font-family: "NexaBold";
+}
+.alert.alert-dismissible .close {
+  padding: 0 1.25rem;
+  bottom: 0;
+}
+
 /* Tooltip Fix */
 .tooltip.in {
   opacity: 1;

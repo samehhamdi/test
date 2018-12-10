@@ -147,6 +147,27 @@ textarea.form-control {
   }
 }
 
+/* Alerts */
+
+.alert{
+    border: none;
+    border-radius: 0;
+    padding: 10px 20px;
+    color: rgba(0,0,0,0.7);
+    font-family: $nexa-light;
+    border-left: 2px solid;
+    box-shadow: 3px 2px 3px 0px rgba(0,0,0,0.2);
+    strong{
+      font-family: $nexa-bold;
+    }
+  &.alert-dismissible{
+    .close{
+      padding: 0 1.25rem;
+      bottom: 0;
+    }
+  }
+}
+
 /* Tooltip Fix */
 
 .tooltip {
