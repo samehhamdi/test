@@ -3,6 +3,8 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Discipline;
+use App\Entity\Skill;
+use App\Repository\SkillRepository;
 use App\Form\DisciplineType;
 use App\Repository\DisciplineRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -57,7 +59,7 @@ class DisciplineController extends AbstractController
     /**
      * @Route("/{id}/edit", name="discipline_edit", methods="GET|POST")
      */
-    public function edit(Request $request, Discipline $discipline): Response
+    public function edit(Request $request, Discipline $discipline, SkillRepository $skillRepo): Response
     {
         $form = $this->createForm(DisciplineType::class, $discipline);
         $form->handleRequest($request);
@@ -69,10 +71,11 @@ class DisciplineController extends AbstractController
             }
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('discipline_index', ['id' => $discipline->getId()]);
+            return $this->redirectToRoute('discipline_edit', ['id' => $discipline->getId()]);
         }
 
         return $this->render('admin/discipline/edit.html.twig', [
+            'skills' => $skillRepo->findAll(),
             'discipline' => $discipline,
             'form' => $form->createView(),
         ]);

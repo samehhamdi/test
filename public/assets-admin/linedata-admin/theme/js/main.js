@@ -193,11 +193,12 @@ $(function() {
 
   /* Autocomplete */
   var selected_skills = [];
+  var dataSource = $("#skills").data('source');
   $("#skills").autocomplete({
     // source: "ws/search.php?skills",
     source: function (request, response) {
       $.getJSON(
-        'ws/search.php',
+        dataSource,
         {
           term: request.term,
           s_values: selected_skills

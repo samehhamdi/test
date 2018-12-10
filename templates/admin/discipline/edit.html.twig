@@ -1,5 +1,29 @@
 {% extends 'base.html.twig' %}
 
+{% form_theme form _self %}
+{% block _discipline_disciplinesd_entry_row %}
+    <div class="item main-item d-none" data-disciplineLevel="{{ form.disciplineLevel.vars.value }}">
+        <div class="item-inner">
+            <div class="row">
+                <span class="d-none">
+                    {{ form_widget(form.disciplineLevel) }}
+                    {{ form_widget(form.skill) }}
+                </span>
+               <a href="#" class="col-6 title toggle-disciplies">{{ form.skill.vars.data|raw }}</a>
+                {# {{ dump(form.level) }} #}
+                <div class="col-4 row">
+                    <div class="checkbox-group horizontal-group group-sm">
+                        {{ form_widget(form.level) }}
+                    </div>
+                </div>
+                <div class="col-2">
+                    {{ form_widget(form.importance) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block title %}Edit Discipline | {{ parent() }}{% endblock %}
 
 {% block body %}
@@ -10,4 +34,98 @@
         <h3 class="text-darkgrey">Edit</h3>
         {{ include('admin/discipline/_form.html.twig', {'button_label': 'Update'}) }}
     </section>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+    #disciplineLevelsTabs .gradeTab{
+        cursor: pointer;
+        display: inline-block;
+        padding: 2px 10px;
+        border: 1px solid #ddd;
+        border-bottom: none;
+    }
+    #disciplineLevelsTabs .gradeTab.selected{
+        background: #f1f4f7;
+    }
+    </style>
+{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+<script>
+    var currentDisciplineLevel = $('#disciplineLevelsTabs').find('.selected').data('value');
+    $(function(){
+
+        updateLevelTabs();
+        function updateLevelTabs(){
+            $('#selected-skills').find('.item').addClass('d-none');
+            $('#selected-skills').find('.item').each(function(){
+                console.log(currentDisciplineLevel);
+                console.log($(this).attr('data-disciplineLevel'));
+                console.log('-----');
+                if($(this).attr('data-disciplineLevel') == currentDisciplineLevel)
+                    $(this).removeClass('d-none');
+            });
+            $("body, main-menu")
+                .getNiceScroll()
+                .resize();
+        }
+        $('#disciplineLevelsTabs').on('click', '.gradeTab', function(e){
+            e.preventDefault();
+            currentDisciplineLevel = $(this).data('value');
+            $('.gradeTab.selected').removeClass('selected');
+            $(this).addClass('selected');
+            updateLevelTabs();
+        });
+
+        
+        $('.selectedSkill').each(function(){
+            var selectedSkill = $(this).val();
+            $(this).closest('.row').find('.checkbox-group').find('input[data-skillID='+selectedSkill+']').addClass('keep').next('label').addClass('keep');
+            $(this).closest('.row').find('.checkbox-group').find('label, input').each(function(){
+                if(!$(this).hasClass('keep'))
+                $(this).remove();
+            });
+        })
+    })
+
+    /* Autocomplete */
+    var selectedSkills = [];
+    var dataSource = $("#skillsAuto").data('source');
+    var skillPrototype = $("#skillsAuto").data('prototype');
+    $("#skillsAuto").autocomplete({
+        // source: "ws/search.php?skills",
+        source:  dataSource,
+        //function (request, response) {
+        //$.getJSON(
+        //    dataSource,
+        //    {
+        //    term: request.term,
+        //    s_values: selectedSkills
+        //    },
+        //    response
+        //);
+        //},
+        minLength: 2,
+        select: function (event, ui) {
+            selectedSkills.push(ui.item.label);
+            var skillindex = $("#selected-skills").find('.item').length;
+            $.ajax({
+                url: skillPrototype,
+                data: {skillid: ui.item.value, skillindex: skillindex+1, disciplineLevel: currentDisciplineLevel },
+                method: 'GET',
+                context: document.body
+            }).done(function(data) {
+               $("#selected-skills").prepend(data);
+            });
+            //$("#selected-skills").append('<div class="item" data-id="' + ui.item.value + '"><div class="item-inner"><div class="row"><a href="#" class="col-6 title toggle-disciplies">' + ui.item.label + '</a><div class="col-4 row"><div class="checkbox-group horizontal-group group-sm"><input type="radio" name="level-'+ ui.item.value +'" id="l-'+ ui.item.value +'-1"><label for="l-'+ ui.item.value +'-1">1</label><input type="radio" name="level-'+ ui.item.value +'" id="l-'+ ui.item.value +'-2"><label for="l-'+ ui.item.value +'-2">2</label><input type="radio" name="level-'+ ui.item.value +'" id="l-'+ ui.item.value +'-3"><label for="l-'+ ui.item.value +'-3">3</label><input type="radio" name="level-'+ ui.item.value +'" id="l-'+ ui.item.value +'-4"><label for="l-'+ ui.item.value +'-4">4</label><input type="radio" name="level-'+ ui.item.value +'" id="l-'+ ui.item.value +'-5"><label for="l-'+ ui.item.value +'-5">5</label></div></div><div class="col-2"><select class="form-control auto-height"><option>Key</option><option>Major</option><option>Minor</option></select></div</div></div></div>');
+            $("#skillsAuto").val('');
+            $("body, main-menu")
+                .getNiceScroll()
+                .resize();
+            event.preventDefault();
+        }
+    });
+</script>
 {% endblock %}

@@ -1,0 +1,25 @@
+
+<div class="item skill_prototype" data-id="{{ skill.id }}">
+    <div class="item-inner">
+        <div class="row">
+        <input type="hidden" name="discipline[disciplinesd][{{ index }}][disciplineLevel]" value="{{ disciplineLevel }}">
+        <input type="hidden" name="discipline[disciplinesd][{{ index }}][skill]" value="{{ skill.id }}">
+            <a href="#" class="col-6 title toggle-disciplies">{{ skill.titleEn }}</a>
+            <div class="col-4 row">
+                <div class="checkbox-group horizontal-group group-sm">
+                {% for level in skill.levels %}
+                    <input type="radio" name="discipline[disciplinesd][{{ index }}][level]" id="l-{{ level.id }}" value="{{ level.id }}">
+                    <label for="l-{{ level.id }}">{{ level.grade }}</label>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="col-2">
+                <select class="form-control auto-height" name="discipline[disciplinesd][{{ index }}][importance]">
+                    <option value="key">Key</option>
+                    <option value="major">Major</option>
+                    <option value="minor">Minor</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>

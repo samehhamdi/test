@@ -47,77 +47,50 @@
             </div>
         </div>
     </fieldset>
-    <h3 class="text-darkgrey mt-3">{{ form_label(form.disciplinesd) }}</h3>
+    <div class="mt-3 mb-3 text-right">
+        <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+    </div>
 
+    <h3 class="text-darkgrey mt-3">{{ form_label(form.disciplinesd) }}</h3>
+    
+    <div id="disciplineLevelsTabs">
+    {% for disciplineGrades in form.grade.vars.value %}
+        <span class="gradeTab {% if loop.first %}selected{% endif %}" id="tab-{{ disciplineGrades }}" data-value="{{ disciplineGrades }}">{{ disciplineGrades }}</span>
+    {% endfor %}
+    </div>
+    
     <fieldset class="bg-grey-1 p-4">
-        <div class="row">
-            <div class="col-12">
-            <a href="#" id="add_skill" class="btn btn-default">Add Skill</a>
-            {{ form_widget(form.disciplinesd) }}{{ form_errors(form.disciplinesd) }}
-                {# <p>
-                    <label for="">Select skill</label>
-                    <input type="text" id="skills" class="form-control" placeholder="Start typing to search skills ...">
-                </p> #}
+        <div class="row align-items-center">
+            <div class="col-8">
+                <p>
+                    <label for="">Select competency</label>
+                    <input type="text" id="skillsAuto" class="form-control" data-source="{{ path('skills_json') }}" data-prototype="{{ path('skill_prototype') }}" placeholder="Start typing to search skills ...">
+                </p>
             </div>
-            {# <div class="col-12">
+            <div class="col-1">
+                <p class="text-center">
+                    <label class="d-block">&nbsp;</label>
+                    <span class="nexa-bold">Or</span>
+                </p>
+            </div>
+            <div class="col-3">
+               <p>
+               <label>&nbsp;</label>
+                    <a href="{{ path('skill_new') }}" class="btn btn-primary btn-block">Add new Competency</a>
+               </p>
+            </div>
+            <div class="col-12">
                 <div class="tree">
                     <div class="list" id="selected-skills">
-                
+                        {{ form_widget(form.disciplinesd) }}
+                        {# {{ form_errors(form.disciplinesd) }} #}
                     </div>
                 </div>
-            </div> #}
+            </div>
         </div>
     </fieldset>
-   
-<b></b> 
 
-<ul id="disciplinesd"
-    data-prototype="{{ form_widget(form.disciplinesd.vars.prototype)|e }}"
-    data-widget-levels="{{ '<li></li>'|e }}">
-     
-</ul>
-
-
-<div class="mt-3 mb-3 text-right">
-    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
-</div>
+    <div class="mt-3 mb-3 text-right">
+        <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+    </div>
 {{ form_end(form) }}
-
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        var $container = $('div#discipline_disciplinesd');
-
-        var index = $container.find(':input').length;
-        $('#add_skill').click(function (e) {
-            addSkill($container);
-
-            $("body, main-menu")
-            .getNiceScroll()
-            .resize();
-
-            e.preventDefault();
-            return false;
-        });
-
-        function addSkill($container) {
-
-
-            var template = $container.attr('data-prototype')
-                .replace(/__name__label__/g, 'Skill ' + (index + 1))
-                .replace(/__name__/g, index)
-            ;
-
-            var $prototype = $(template);
-
-
-            $container.append($prototype);
-
-            index++;
-        }
-
-
-    });
-</script>

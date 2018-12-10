@@ -12,7 +12,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ApiResource(
  *     collectionOperations={"get"={"method"="GET"}},
- *     itemOperations={"get"={"method"="GET"}}
+ *     itemOperations={"get"={"method"="GET"}},
+ *     attributes={"formats"={"json", "json"={"application/json"}}}
  * )
  * @ORM\Entity(repositoryClass="App\Repository\LevelRepository")
  */

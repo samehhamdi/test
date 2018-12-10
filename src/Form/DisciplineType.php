@@ -39,12 +39,14 @@ class DisciplineType extends AbstractType
             ))
             ->add('disciplinesd', CollectionType::class, array(
                 'entry_type' => DisciplineSkillLevelType::class,
-                'label' => 'Skills',
+                'label' => 'Competencies',
                 'allow_add' => true,
-                'prototype' => true,
+                'allow_delete' => true,
+                'prototype' => false,
                 'by_reference' => false,
 
-            ));
+            ))
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

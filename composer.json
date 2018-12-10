@@ -29,6 +29,7 @@
     "require-dev": {
         "fzaninotto/faker": "^1.8",
         "hautelook/alice-bundle": "^2.3",
+        "symfony/debug-pack": "^1.0",
         "symfony/dotenv": "4.1.*"
     },
     "config": {

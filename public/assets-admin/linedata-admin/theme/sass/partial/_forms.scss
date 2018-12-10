@@ -56,6 +56,11 @@ textarea.form-control {
 /* checkbox group */
 .checkbox-group {
   &.horizontal-group {
+    div{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -102,8 +107,14 @@ textarea.form-control {
 /* radio group */
 .radio-group {
   &.horizontal-group {
+    div{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
     display: flex;
     justify-content: space-between;
+    width: 100%;
     label {
       display: block;
       width: 100%;
