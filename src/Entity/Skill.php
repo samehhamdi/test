@@ -32,7 +32,6 @@ class Skill
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Required")
      */
     private $descriptionEn;
     /**
@@ -43,7 +42,6 @@ class Skill
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Required")
      */
     private $descriptionFr;
     /**

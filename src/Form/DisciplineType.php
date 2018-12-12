@@ -19,14 +19,23 @@ class DisciplineType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titleEn', TextType::class, array('attr' => array( 'class' => 'form-control')))
-            ->add('titleFr', TextType::class, array('attr' => array( 'class' => 'form-control')))
-            ->add('descriptionEn', TextareaType::class, array('attr' => array( 'class' => 'editor form-control')))
-            ->add('descriptionFr', TextareaType::class, array('attr' => array( 'class' => 'editor form-control')))
+            ->add('titleEn', TextType::class, array(
+                'label' => 'form.discipline.titleEn',
+                'attr' => array( 'class' => 'form-control')))
+            ->add('titleFr', TextType::class, array(
+                'label' => 'form.discipline.titleFr',
+                'attr' => array( 'class' => 'form-control')))
+            ->add('descriptionEn', TextareaType::class, array(
+                'label' => 'form.discipline.descriptionEn',
+                'attr' => array( 'class' => 'editor form-control')))
+            ->add('descriptionFr', TextareaType::class, array(
+                'label' => 'form.discipline.descriptionFr',
+                'attr' => array( 'class' => 'editor form-control')))
             ->add('grade', ChoiceType::class, array(
-                    'label' => 'Level',
+                    'label' => 'form.discipline.level',
                     'choices' => array(
-                        '0' => 0, '1' => 1, '2' => 2, '3' => 3, '4' => 4, '5' => 5, '6' => 6, '7', 7, '8' => 8),
+                        '0' => '0', '1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7', 7, '8' => 8),
+
                     'multiple' => true,
                     'expanded' => true,
                     'attr' => array('class' => 'checkbox-group horizontal-group')
@@ -39,7 +48,7 @@ class DisciplineType extends AbstractType
             ))
             ->add('disciplinesd', CollectionType::class, array(
                 'entry_type' => DisciplineSkillLevelType::class,
-                'label' => 'Skills',
+                'label' => 'form.discipline.skills',
                 'allow_add' => true,
                 'prototype' => true,
                 'by_reference' => false,

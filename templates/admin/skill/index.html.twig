@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} | Skills{% endblock %}
+{% block title %}{{ parent() }} |{% trans %} Skills {% endtrans %}{% endblock %}
 
 {% block body %}
      <section class="container pt-5">
         <div>
-            <h1 class="d-inline-block">Skills / Competencies</h1>
+            <h1 class="d-inline-block">{% trans %} Skills / Competencies {% endtrans %}</h1>
             <a href="{{ path('skill_new') }}" class="text-blue" data-toggle="tooltip" title="Add new"><i class="icon icon-md material-icons-add_circle icon-shift-2"></i></a>
         </div>
         <div class="list-header text-right">
@@ -25,7 +25,7 @@
             </div>
         {% else %}
         <p>
-            <span class="hint">no records found</span>
+            <span class="hint">{% trans %} no records found {% endtrans %}</span>
         </p>
         {% endfor %}
         </div>

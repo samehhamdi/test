@@ -22,22 +22,30 @@ class DisciplineSkillLevelType extends AbstractType
                   'choice_label'=>'titleEn',
               ))*/
             ->add('disciplineLevel', ChoiceType::class, array(
+                'label' => 'form.disciplineskilllevel.disciplineLevel',
                 'choices' => array(
                     '0' => '0', '1' => '1', '2' => '2','3'=>'3','4'=>'4','5'=>'5','6'=>'6','7'=>'7','8'=>'8'),
                 'multiple' => false,
                 'expanded' => false,
             ))
             ->add('skill', EntityType::class, array(
+                'label' => 'form.disciplineskilllevel.skill',
                 'class' => Skill::class,
                 'choice_label' => 'titleEn',
             ))
             ->add('level', EntityType::class, array(
+                'label' => 'form.disciplineskilllevel.level',
                 'class' => Level::class,
                 'choice_label' => 'titleEn',
             ))
             ->add('importance', ChoiceType::class, array(
+                'label' => 'form.disciplineskilllevel.importance',
                 'choices' => array(
                     'Key' => 'key', 'Major' => 'major', 'Minor' => 'minor'),
+
+                'choice_label' => function ($choiceValue, $key, $value) {
+                    return 'form.disciplineskilllevel.'.$key;
+                },
                 'multiple' => false,
                 'expanded' => true,
             ));
