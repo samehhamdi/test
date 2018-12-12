@@ -479,6 +479,11 @@ textarea.form-control:focus {
   justify-content: space-between;
   width: 100%;
 }
+.checkbox-group.horizontal-group div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 .checkbox-group.horizontal-group label {
   display: block;
   width: 100%;
@@ -518,6 +523,12 @@ textarea.form-control:focus {
 .radio-group.horizontal-group {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+}
+.radio-group.horizontal-group div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 .radio-group.horizontal-group label {
   display: block;
@@ -548,6 +559,24 @@ textarea.form-control:focus {
   color: #fff;
 }
 
+/* Alerts */
+.alert {
+  border: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: "NexaLight";
+  border-left: 2px solid;
+  box-shadow: 3px 2px 3px 0px rgba(0, 0, 0, 0.2);
+}
+.alert strong {
+  font-family: "NexaBold";
+}
+.alert.alert-dismissible .close {
+  padding: 0 1.25rem;
+  bottom: 0;
+}
+
 /* Tooltip Fix */
 .tooltip.in {
   opacity: 1;
@@ -569,7 +598,7 @@ textarea.form-control:focus {
   margin: 0;
   padding: 0;
 }
-.tree > .list > .item .item-inner {
+.tree > .list > .item .item-inner, .tree > .list .item.main-item .item-inner {
   display: block;
   background-color: #e6e9ec;
   margin-bottom: 4px;
@@ -577,34 +606,34 @@ textarea.form-control:focus {
   position: relative;
   transition: transform 0.2s ease;
 }
-.tree > .list > .item .item-inner .title {
+.tree > .list > .item .item-inner .title, .tree > .list .item.main-item .item-inner .title {
   display: inline-block;
   margin-left: 15px;
   font-family: "NexaBold";
 }
-.tree > .list > .item .item-inner:hover .delete-link {
+.tree > .list > .item .item-inner:hover .delete-link, .tree > .list .item.main-item .item-inner:hover .delete-link {
   color: #b71928;
 }
-.tree > .list > .item .item-inner:hover .delete-link:hover {
+.tree > .list > .item .item-inner:hover .delete-link:hover, .tree > .list .item.main-item .item-inner:hover .delete-link:hover {
   color: #e40134;
 }
-.tree > .list > .item .item-inner:hover .edit-link {
+.tree > .list > .item .item-inner:hover .edit-link, .tree > .list .item.main-item .item-inner:hover .edit-link {
   color: #317ad1;
 }
-.tree > .list > .item .item-inner:hover .edit-link:hover {
+.tree > .list > .item .item-inner:hover .edit-link:hover, .tree > .list .item.main-item .item-inner:hover .edit-link:hover {
   color: #229cdb;
 }
-.tree > .list > .item .actions {
+.tree > .list > .item .actions, .tree > .list .item.main-item .actions {
   display: inline-block;
   color: #bfc6d0;
 }
-.tree > .list > .item .disciplines {
+.tree > .list > .item .disciplines, .tree > .list .item.main-item .disciplines {
   display: none;
   list-style: none;
   padding: 3px 0 3px;
   margin: 0 0 4px;
 }
-.tree > .list > .item .disciplines > .item {
+.tree > .list > .item .disciplines > .item, .tree > .list .item.main-item .disciplines > .item {
   padding: 5px 25px 5px 35px;
   position: relative;
   background-color: #fff;
@@ -615,22 +644,22 @@ textarea.form-control:focus {
   border-radius: 5px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
-.tree > .list > .item .disciplines > .item:hover {
+.tree > .list > .item .disciplines > .item:hover, .tree > .list .item.main-item .disciplines > .item:hover {
   transform: translateX(3px);
 }
-.tree > .list > .item .disciplines > .item:hover .delete-link {
+.tree > .list > .item .disciplines > .item:hover .delete-link, .tree > .list .item.main-item .disciplines > .item:hover .delete-link {
   color: #b71928;
 }
-.tree > .list > .item .disciplines > .item:hover .delete-link:hover {
+.tree > .list > .item .disciplines > .item:hover .delete-link:hover, .tree > .list .item.main-item .disciplines > .item:hover .delete-link:hover {
   color: #e40134;
 }
-.tree > .list > .item .disciplines > .item:hover .edit-link {
+.tree > .list > .item .disciplines > .item:hover .edit-link, .tree > .list .item.main-item .disciplines > .item:hover .edit-link {
   color: #317ad1;
 }
-.tree > .list > .item .disciplines > .item:hover .edit-link:hover {
+.tree > .list > .item .disciplines > .item:hover .edit-link:hover, .tree > .list .item.main-item .disciplines > .item:hover .edit-link:hover {
   color: #229cdb;
 }
-.tree > .list > .item .disciplines > .item .dragHandler {
+.tree > .list > .item .disciplines > .item .dragHandler, .tree > .list .item.main-item .disciplines > .item .dragHandler {
   color: #bfc6d0;
   transition: color 0.2s ease;
   position: absolute;
@@ -643,31 +672,31 @@ textarea.form-control:focus {
   cursor: -moz-grab;
   cursor: -webkit-grab;
 }
-.tree > .list > .item .disciplines > .item .dragHandler:focus, .tree > .list > .item .disciplines > .item .dragHandler:active {
+.tree > .list > .item .disciplines > .item .dragHandler:focus, .tree > .list > .item .disciplines > .item .dragHandler:active, .tree > .list .item.main-item .disciplines > .item .dragHandler:focus, .tree > .list .item.main-item .disciplines > .item .dragHandler:active {
   cursor: grabbing;
   cursor: -moz-grabbing;
   cursor: -webkit-grabbing;
 }
-.tree > .list > .item .disciplines > .item .dragHandler .icon {
+.tree > .list > .item .disciplines > .item .dragHandler .icon, .tree > .list .item.main-item .disciplines > .item .dragHandler .icon {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   will-change: transform;
 }
-.tree > .list > .item .disciplines > .item .dragHandler:hover {
+.tree > .list > .item .disciplines > .item .dragHandler:hover, .tree > .list .item.main-item .disciplines > .item .dragHandler:hover {
   color: #317ad1;
 }
-.tree > .list > .item.opened {
+.tree > .list > .item.opened, .tree > .list .item.main-item.opened {
   background-color: #f1f4f7;
 }
-.tree > .list > .item.opened .disciplines {
+.tree > .list > .item.opened .disciplines, .tree > .list .item.main-item.opened .disciplines {
   display: block;
 }
-.tree > .list > .item.hovered {
+.tree > .list > .item.hovered, .tree > .list .item.main-item.hovered {
   position: relative;
 }
-.tree > .list > .item.hovered:after {
+.tree > .list > .item.hovered:after, .tree > .list .item.main-item.hovered:after {
   content: "";
   position: absolute;
   top: 0;

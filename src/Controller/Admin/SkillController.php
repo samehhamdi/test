@@ -24,6 +24,45 @@ class SkillController extends AbstractController
     }
 
     /**
+     * @Route("/json", name="skills_json", methods="GET")
+     */
+    public function skillsListJson(Request $request, SkillRepository $skillRepository): Response
+    {
+        $term = $request->get('term');
+        $skillsList = $skillRepository->createQueryBuilder('a')
+            ->Where('a.titleEn LIKE :term')
+            ->orWhere('a.titleFr LIKE :term')
+            ->setParameter('term', '%'.$term.'%')
+            ->getQuery()
+            ->getResult();
+
+        $list = [];
+        foreach ($skillsList as $skill) {
+            $list[] = array('label' => $skill->getTitleEn(), 'value' => $skill->getId());
+        }
+
+        return $this->json($list);
+    }
+
+    /**
+     * @Route("/prototype", name="skill_prototype", methods="GET")
+     */
+    public function skillPrototype(Request $request, SkillRepository $skillRepository): Response
+    {
+
+        $skillid = $request->get('skillid');
+        $index = $request->get('skillindex');
+        $disciplineLevel = $request->get('disciplineLevel');
+        $skill = $skillRepository->find($skillid);
+
+        return $this->render('admin/skill/prototype.html.twig', [
+            'skill' => $skill,
+            'index' => $index,
+            'disciplineLevel' => $disciplineLevel
+        ]);
+    }
+
+    /**
      * @Route("/new", name="skill_new", methods="GET|POST")
      */
     public function new(Request $request): Response

@@ -137,6 +137,7 @@ $(function() {
   $(".doubleslider").slider({ tooltip: "always", tooltip_split: true });
 
   /* Sortable */
+  var dropAction = $(".droppable").closest('.list').data('action');
   $(".draggable").draggable({
     handle: '.dragHandler',
     revert: "invalid",
@@ -149,20 +150,44 @@ $(function() {
     hoverClass: "hovered",
 
     drop: function(event, ui) {
+      dropAction = ui.draggable.attr('data-action');
+      var _this = $(this);
+      var family_id = $(this).data('id');
+      console.log(family_id);
       if($(event.target).find(ui.draggable).length > 0){
         ui.draggable.draggable("option", "revert", true);
       }
       else{
-        cloned = ui.helper.clone().css({ position: "", top: "", left: "" }).removeClass('ui-draggable-dragging');
-        setDraggable(cloned, false);
-        
-        $(this)
-        .addClass("opened")
-        .find(".disciplines")
-        .append(cloned);
-        ui.helper.hide();
+
+        if(dropAction != undefined & dropAction != ''){
+          $.ajax({
+            url: dropAction,
+            data: {familyID: family_id},
+            method: 'GET',
+          }).done(function(){
+            cloned = ui.helper.clone().css({ position: "", top: "", left: "" }).removeClass('ui-draggable-dragging');
+            setDraggable(cloned, false);
+            
+            _this
+            .addClass("opened")
+            .find(".disciplines")
+            .append(cloned);
+            ui.helper.hide();
+          });
+        }
+        else{
+          console.log(dropAction);
+          cloned = ui.helper.clone().css({ position: "", top: "", left: "" }).removeClass('ui-draggable-dragging');
+          setDraggable(cloned, false);
+          
+          $(this)
+          .addClass("opened")
+          .find(".disciplines")
+          .append(cloned);
+          ui.helper.hide();
+          }
+        }
       }
-    }
   });
 
   function setDraggable(el, doClone) {
@@ -193,11 +218,12 @@ $(function() {
 
   /* Autocomplete */
   var selected_skills = [];
+  var dataSource = $("#skills").data('source');
   $("#skills").autocomplete({
     // source: "ws/search.php?skills",
     source: function (request, response) {
       $.getJSON(
-        'ws/search.php',
+        dataSource,
         {
           term: request.term,
           s_values: selected_skills

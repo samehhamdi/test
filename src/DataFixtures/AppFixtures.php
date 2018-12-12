@@ -48,18 +48,16 @@ class AppFixtures extends Fixture
             $skill->setSkilltype('T');
             $skill->setDateCreated((\DateTime::createFromFormat('Y-m-d', date('Y-m-d'))));
             $manager->persist($skill);
-        }
-
-        for ($i = 0; $i < 10; $i++) {
-
-            $level = new Level();
-            $level->setTitleEn($faker->jobTitle);
-            $level->setTitleFr($faker->jobTitle);
-            $level->setDescriptionEn($faker->text);
-            $level->setDescriptionFr($faker->text);
-            $level->setGrade($i);
-            $level->setSkill($skill);
-            $manager->persist($level);
+            for ($j = 1; $j <= 5; $j++) {
+                $level = new Level();
+                $level->setTitleEn($faker->jobTitle);
+                $level->setTitleFr($faker->jobTitle);
+                $level->setDescriptionEn($faker->text);
+                $level->setDescriptionFr($faker->text);
+                $level->setGrade($j);
+                $level->setSkill($skill);
+                $manager->persist($level);
+            }
         }
 
 

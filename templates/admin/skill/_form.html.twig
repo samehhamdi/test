@@ -1,57 +1,60 @@
 {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+<ul class="nav nav-tabs justify-content-end">
+    <li class="nav-item"><a class="nav-link active" href="#en_tab" data-toggle="tab" role="tab" aria-controls="en_tab" aria-selected="true">En</a></li>
+    <li calss="nav-item"><a class="nav-link" href="#fr_tab" data-toggle="tab" role="tab" aria-controls="fr_tab" aria-selected="false">Fr</a></li>
+</ul>
 <fieldset class="bg-grey-1 p-4">
         <div class="row">
             <div class="col-12 tab-content">
-    {{ form_label(form.titleEn) }} {{ form_widget(form.titleEn) }}{{ form_errors(form.titleEn) }}
-   {{ form_label(form.titleFr) }} {{ form_widget(form.titleFr) }}{{ form_errors(form.titleFr) }}
-   {{ form_label(form.descriptionEn) }}{{ form_widget(form.descriptionEn) }}{{ form_errors(form.descriptionEn) }}
-   {{ form_label(form.descriptionFr) }}{{ form_widget(form.descriptionFr) }}{{ form_errors(form.descriptionFr) }}
-   {{ form_label(form.skilltype) }} {{ form_widget(form.skilltype) }}{{ form_errors(form.skilltype) }}
-<b>{{ form_label(form.levels) }}</b> {{ form_widget(form.levels) }}
+                <div class="tab-pane fade show active" id="en_tab" role="tabpanel" aria-labelledby="en-tab">
+                    <p>
+                        {{ form_label(form.titleEn) }} 
+                        {{ form_widget(form.titleEn) }}
+                        {{ form_errors(form.titleEn) }}
+                    </p>
+                    <p>
+                        {{ form_label(form.descriptionEn) }}
+                        {{ form_widget(form.descriptionEn) }}
+                        {{ form_errors(form.descriptionEn) }}
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="fr_tab" role="tabpanel" aria-labelledby="fr-tab">
+                    <p>
+                        {{ form_label(form.titleFr) }} 
+                        {{ form_widget(form.titleFr) }}
+                        {{ form_errors(form.titleFr) }}
+                    </p>
+                    <p>
+                        {{ form_label(form.descriptionFr) }}
+                        {{ form_widget(form.descriptionFr) }}
+                        {{ form_errors(form.descriptionFr) }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </fieldset>
 
-<ul id="levels"
-    data-prototype="{{ form_widget(form.levels.vars.prototype)|e }}"
-    data-widget-levels="{{ '<li></li>'|e }}">
-     
-</ul>
-<!--<a href="#" id="add_level" class="btn btn-default">Add Level</a>-->
-<button class="btn">{{ button_label|default('Save') }}</button>
+   <h3 class="text-darkgrey mt-3">{{ form_label(form.skilltype) }}</h3>
+   <fieldset class="bg-grey-1 p-4">
+        <div class="row">
+            <div class="col-12 tab-content">
+                <p>
+                    {{ form_widget(form.skilltype) }}
+                    {{ form_errors(form.skilltype) }}
+                </p>
+            </div>
+        </div>
+    </fieldset>
+    <h3 class="text-darkgrey mt-3">{{ form_label(form.levels) }}</h3>
+   <fieldset class="bg-grey-1 p-4">
+        <div class="row">
+            <div class="col-12 tab-content">
+            {{ form_widget(form.levels) }}
+            </div>
+        </div>
+    </fieldset>
+
+   <div class="mt-3 mb-3 text-right">
+        <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+    </div>
 {{ form_end(form) }}
-
-</div>
-</div>
-</section>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        var $container = $('div#skill_levels');
-
-        var index = $container.find(':input').length;
-
-
-        if (index == 0) {
-            for (var i = 1; i <= 5; i++) {
-                addLevel($container);
-            }
-        }
-
-        function addLevel($container) {
-
-
-            var template = $container.attr('data-prototype')
-                .replace(/__name__label__/g, 'Level ' + (index + 1))
-                .replace(/__name__/g, index)
-            ;
-
-            var $prototype = $(template);
-
-
-            $container.append($prototype);
-
-            index++;
-        }
-
-
-    });
-</script>

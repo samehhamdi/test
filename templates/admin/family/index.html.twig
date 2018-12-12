@@ -19,7 +19,7 @@
         <div class="tree">
             <div class="list">
             {% for family in families %}
-                <div class="item droppable">
+                <div class="item droppable" data-id="{{family.id}}">
                     <div class="item-inner">
                         <a href="#" class="title toggle-disciplies">{{ family.titleEn }}</a>
                         <span class="actions float-right">
@@ -29,7 +29,7 @@
                     </div>
                     <ul class="disciplines">
                     {% for discipline in family.disciplines %}
-                        <li class="item draggable">
+                        <li class="item draggable" data-action="{{ path('update_discipline_family', {'id': discipline.id}) }}">
                             <span class="dragHandler"><i class="icon mdi mdi-drag-vertical icon-sm"></i></span>
                             <span class="actions float-right">
                                 <a href="{{ path('discipline_edit', {'id': discipline.id}) }}" class="edit-link"><i class="icon mdi mdi-pencil-box"></i></a>

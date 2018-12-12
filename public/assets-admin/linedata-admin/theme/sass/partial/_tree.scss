@@ -4,7 +4,7 @@
     display: block;
     margin: 0;
     padding: 0;
-    & > .item {
+    & > .item, .item.main-item{
       .item-inner {
         display: block;
         background-color: $grey-4;

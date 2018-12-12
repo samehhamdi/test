@@ -17,7 +17,8 @@ use Doctrine\ORM\Mapping as ORM;
  *     collectionOperations={"get"={"method"="GET"}},
  *     itemOperations={"get"={"method"="GET"},
  *    "special"={"route_name"="book_special"},
- *     }
+ *     },
+ *     attributes={"formats"={"json", "json"={"application/json"}}}
  * )
  * @ORM\Entity(repositoryClass="App\Repository\FamilyRepository")
  */

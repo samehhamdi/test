@@ -3,6 +3,9 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Discipline;
+use App\Entity\Skill;
+use App\Repository\FamilyRepository;
+use App\Repository\SkillRepository;
 use App\Form\DisciplineType;
 use App\Repository\DisciplineRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -57,7 +60,7 @@ class DisciplineController extends AbstractController
     /**
      * @Route("/{id}/edit", name="discipline_edit", methods="GET|POST")
      */
-    public function edit(Request $request, Discipline $discipline): Response
+    public function edit(Request $request, Discipline $discipline, SkillRepository $skillRepo): Response
     {
         $form = $this->createForm(DisciplineType::class, $discipline);
         $form->handleRequest($request);
@@ -69,10 +72,11 @@ class DisciplineController extends AbstractController
             }
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('discipline_index', ['id' => $discipline->getId()]);
+            return $this->redirectToRoute('discipline_edit', ['id' => $discipline->getId()]);
         }
 
         return $this->render('admin/discipline/edit.html.twig', [
+            'skills' => $skillRepo->findAll(),
             'discipline' => $discipline,
             'form' => $form->createView(),
         ]);
@@ -90,5 +94,22 @@ class DisciplineController extends AbstractController
         }
 
         return $this->redirectToRoute('discipline_index');
+    }
+
+
+    /**
+     * @Route("/{id}/updateFamily", name="update_discipline_family", methods="GET")
+     */
+    public function updateFamily(Request $request, Discipline $discipline, FamilyRepository $familyRepo): Response
+    {
+        $familyId = $request->get('familyID');
+        if( $family = $familyRepo->find($familyId) ) {
+            $discipline->setFamily($family);
+            $this->getDoctrine()->getManager()->flush();
+            return $this->json(array('response' => true));
+        }
+        else {
+            return $this->json(array('response' => false));
+        }
     }
 }
