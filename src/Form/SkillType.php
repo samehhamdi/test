@@ -24,6 +24,9 @@ class SkillType extends AbstractType
                 'label' => 'form.skill.skilltype',
                 'choices' => array(
                     'Technical' => 'T', 'Functional' => 'F', 'Core' => 'C'),
+                'choice_label' => function ( $key) {
+                    return 'form.skill.'.$key;
+                },
                 'multiple' => false,
                 'expanded' => true,
             ))

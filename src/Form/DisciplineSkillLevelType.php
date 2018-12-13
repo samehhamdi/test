@@ -52,7 +52,7 @@ class DisciplineSkillLevelType extends AbstractType
                 'choices' => array(
                     'Key' => 'key', 'Major' => 'major', 'Minor' => 'minor'),
 
-                'choice_label' => function ($choiceValue, $key, $value) {
+                'choice_label' => function ($key) {
                     return 'form.disciplineskilllevel.'.$key;
                 },
                 'multiple' => false,
