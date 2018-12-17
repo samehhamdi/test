@@ -15,11 +15,12 @@ class FamilyType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titleEn', TextType::class, array('attr' => array( 'class' => 'form-control')))
-            ->add('titleFr', TextType::class, array('attr' => array( 'class' => 'form-control')))
-            ->add('descriptionEn', TextareaType::class, array('attr' => array( 'class' => 'editor form-control')))
-            ->add('descriptionFr', TextareaType::class, array('attr' => array( 'class' => 'editor form-control')))
+            ->add('titleEn', TextType::class,  array('label' => 'form.family.titleEn','attr' => array( 'class' => 'form-control')))
+            ->add('titleFr', TextType::class, array('label' => 'form.family.titleFr','attr' => array( 'class' => 'form-control')))
+            ->add('descriptionEn', TextareaType::class, array('label' => 'form.family.descriptionEn','attr' => array( 'class' => 'editor form-control')))
+            ->add('descriptionFr', TextareaType::class, array('label' => 'form.family.descriptionFr','attr' => array( 'class' => 'editor form-control')))
             ->add('disciplines', CollectionType::class, array(
+                'label' => 'form.family.disciplines',
                 'entry_type' => DisciplineType::class,
                 'allow_add' => false,
                 'prototype' => false,

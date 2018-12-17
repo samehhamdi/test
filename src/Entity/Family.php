@@ -42,7 +42,6 @@ class Family
     /**
      * @ORM\Column(type="string", length=255)
      *
-     * @Assert\NotBlank(message="Required")
      *
      */
     private $descriptionEn;
@@ -57,7 +56,6 @@ class Family
     /**
      * @ORM\Column(type="string", length=255)
      *
-     * @Assert\NotBlank(message="Required")
      *
      */
     private $descriptionFr;

@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} | Dashboard{% endblock %}
+{% block title %}{{ parent() }} | {% trans %} Dashboard {% endtrans %}{% endblock %}
 
 {% block body %}
 
     <section class="container pt-5">
         <div>
-            <h1 class="d-inline-block">Dashboard</h1>
+            <h1 class="d-inline-block">{% trans %} Dashboard {% endtrans %}</h1>
        </div>
        <div>
         <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>

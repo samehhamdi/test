@@ -4,3 +4,15 @@
 NelmioApiDocBundle:
   resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
   prefix:   /api/doc
+controllers:
+  resource: '../src/Controller/'
+  type: annotation
+  prefix:
+    en: '/en'
+    fr: '/fr'
+
+
+
+
+
+
