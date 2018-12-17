@@ -1,0 +1,58 @@
+'Click on the job family name to show the list of disciplines.': 'Cliquez sur le nom de la famille  pour afficher la liste des disciplines.'
+'You can also drag & drop each job family to change the display order.': 'Vous pouvez également faire glisser chaque famille de travaux pour modifier l’ordre d’affichage.'
+Families: Familles
+'New Family': 'Nouvelle famille'
+family: famille
+'Edit Family': 'Modifier famille'
+Family: Famille
+Edit: Editer
+'Create new': 'Créer nouveau'
+'Edit Discipline': 'Modifier discipline'
+Discipline: Discipline
+Disciplines: Disciplines
+'no records found': 'Aucun enregistrement trouvé'
+'New Discipline': 'Nouvelle discipline'
+Dashboard: Tableau de bord
+'Edit Skill': 'Modifier une compétence'
+'Skill / Competency': Compétence
+Skills: Compétences
+'Skills / Competencies': 'Skills / Competencies'
+'New Skill': 'Nouvelle Compétence'
+'Skill/ Competency': Compétence
+form.family.titleEn: Titre
+form.family.titleFr: Titre
+form.family.descriptionEn: Description
+form.family.descriptionFr: Description
+form.family.disciplines: Disciplines
+form.discipline.titleEn: 'Titre En'
+form.discipline.titleFr: 'Titre FR'
+form.discipline.descriptionEn: Description
+form.discipline.descriptionFr: Description
+form.discipline.level: level
+form.discipline.skills: Compétences
+form.level.titleEn: 'Titre En'
+form.level.titleFr: 'Titre FR'
+form.level.descriptionEn: Description
+form.level.descriptionFr: Description
+form.skill.titleEn: 'Titre En'
+form.skill.titleFr: 'Titre FR'
+form.skill.descriptionEn: 'Description En'
+form.skill.descriptionFr: 'Description Fr'
+form.skill.skilltype: 'Type Compétence'
+form.skill.T: Technique
+form.skill.F: Fonctionnel
+form.skill.C: Core
+form.skill.levels: levels
+form.disciplineskilllevel.disciplineLevel: 'Discipline Level'
+form.disciplineskilllevel.level: Level
+form.disciplineskilllevel.skill: Compétence
+form.disciplineskilllevel.importance: importance
+form.disciplineskilllevel.key: Clé
+form.disciplineskilllevel.major: Majeur
+form.disciplineskilllevel.minor: Mineur
+Update: Editer
+'Edit Competency': 'Modifier La compétence'
+Competency: Compétence
+Competencies: Compétences
+'New Competency': 'Nouvelle Compétence'
+Profile: Profil

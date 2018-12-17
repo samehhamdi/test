@@ -1,0 +1,58 @@
+'Click on the job family name to show the list of disciplines.': 'Click on the job family name to show the list of disciplines.'
+'You can also drag & drop each job family to change the display order.': 'You can also drag & drop each job family to change the display order.'
+Families: Families
+'New Family': 'New Family'
+family: family
+'Edit Family': 'Edit Family'
+Family: Family
+Edit: Edit
+'Create new': 'Create new'
+'Edit Discipline': 'Edit Discipline'
+Discipline: Discipline
+Disciplines: Disciplines
+'no records found': 'no records found'
+'New Discipline': 'New Discipline'
+Dashboard: Dashboard
+'Edit Skill': 'Edit Skill'
+'Skill / Competency': 'Skill / Competency'
+Skills: Skills
+'Skills / Competencies': 'Skills / Competencies'
+'New Skill': 'New Skill'
+'Skill/ Competency': 'Skill/ Competency'
+form.family.titleEn: Title
+form.family.titleFr: Title
+form.family.descriptionEn: Description
+form.family.descriptionFr: Description
+form.family.disciplines: Disciplines
+form.discipline.titleEn: 'Title En'
+form.discipline.titleFr: 'Title FR'
+form.discipline.descriptionEn: Description
+form.discipline.descriptionFr: Description
+form.discipline.level: level
+form.discipline.skills: skills
+form.level.titleEn: 'Title En'
+form.level.titleFr: 'Title FR'
+form.level.descriptionEn: 'Description En'
+form.level.descriptionFr: 'Description Fr'
+form.skill.titleEn: 'Title En'
+form.skill.titleFr: 'Title FR'
+form.skill.descriptionEn: 'Description En'
+form.skill.descriptionFr: 'Description Fr'
+form.skill.skilltype: 'Skill Type'
+form.skill.T: Technical
+form.skill.F: Functional
+form.skill.C: Core
+form.skill.levels: levels
+form.disciplineskilllevel.disciplineLevel: 'Discipline Level'
+form.disciplineskilllevel.level: Level
+form.disciplineskilllevel.skill: Skill
+form.disciplineskilllevel.importance: importance
+form.disciplineskilllevel.key: Key
+form.disciplineskilllevel.major: Major
+form.disciplineskilllevel.minor: Minor
+Update: Update
+'Edit Competency': 'Edit Competency'
+Competency: Competency
+Competencies: Competencies
+'New Competency': 'New Competency'
+Profile: Profile
