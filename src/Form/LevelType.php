@@ -7,7 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class LevelType extends AbstractType
 {
@@ -20,10 +20,10 @@ class LevelType extends AbstractType
             ->add('titleFr',TextType::class, array(
                 'label' => 'form.level.titleFr',
                 'attr' => array( 'class' => 'form-control')))
-            ->add('descriptionEn',TextType::class, array(
+            ->add('descriptionEn',TextareaType::class, array(
                 'label' => 'form.level.descriptionEn',
                 'attr' => array( 'class' => 'form-control')))
-            ->add('descriptionFr',TextType::class, array(
+            ->add('descriptionFr',TextareaType::class, array(
                 'label' => 'form.level.descriptionFr',
                 'attr' => array( 'class' => 'form-control')));
     }

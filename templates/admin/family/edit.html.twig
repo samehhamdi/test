@@ -2,6 +2,17 @@
 
 {% block title %}{% trans %} Edit Family {% endtrans %}< | {{ parent() }}{% endblock %}
 
+{% form_theme form _self %}
+{% block _family_disciplines_entry_row %}
+    <div class="item main-item">
+        <div class="item-inner">
+            <div class="row">
+                <a href="{{ path('discipline_edit', {'id': form.vars.value.id}) }}" class="col-6 title">{{ form.vars.value }}</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block body %}
 <section class="container mt-5">
         <h1>{% trans %}  Family {% endtrans %}</h1>

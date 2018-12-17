@@ -33,6 +33,7 @@ class DisciplineController extends AbstractController
     {
 
         $discipline = new Discipline();
+
         $form = $this->createForm(DisciplineType::class, $discipline);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -49,6 +50,11 @@ class DisciplineController extends AbstractController
 
             return $this->redirectToRoute('discipline_index');
         }
+
+        //  if($family_id = $request->get('family')){
+        //      dump($family_id);
+        //     $form->get('family')->setData($family_id);
+        // }
 
         return $this->render('admin/discipline/new.html.twig', [
             'discipline' => $discipline,

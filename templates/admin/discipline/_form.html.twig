@@ -1,5 +1,5 @@
 {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
-<ul class="nav nav-tabs justify-content-end">
+    <ul class="nav nav-tabs justify-content-end">
         <li class="nav-item"><a class="nav-link active" href="#en_tab" data-toggle="tab" role="tab" aria-controls="en_tab" aria-selected="true">En</a></li>
         <li calss="nav-item"><a class="nav-link" href="#fr_tab" data-toggle="tab" role="tab" aria-controls="fr_tab" aria-selected="false">Fr</a></li>
     </ul>
@@ -51,46 +51,48 @@
         <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
     </div>
 
-    <h3 class="text-darkgrey mt-3">{{ form_label(form.disciplinesd) }}</h3>
-    
-    <div id="disciplineLevelsTabs">
-    {% for disciplineGrades in form.grade.vars.value %}
-        <span class="gradeTab {% if loop.first %}selected{% endif %}" id="tab-{{ disciplineGrades }}" data-value="{{ disciplineGrades }}">{{ disciplineGrades }}</span>
-    {% endfor %}
-    </div>
-    
-    <fieldset class="bg-grey-1 p-4">
-        <div class="row align-items-center">
-            <div class="col-8">
+    <div id="competenciesBlock">
+        <h3 class="text-darkgrey mt-3">{{ form_label(form.disciplinesd) }}</h3>
+        
+        <div id="disciplineLevelsTabs">
+            {% for disciplineGrades in form.grade.vars.value %}
+                <span class="gradeTab {% if loop.first %}selected{% endif %}" id="tab-{{ disciplineGrades }}" data-value="{{ disciplineGrades }}">{{ disciplineGrades }}</span>
+            {% endfor %}
+        </div>
+        
+        <fieldset class="bg-grey-1 p-4">
+            <div class="row align-items-center">
+                <div class="col-8">
+                    <p>
+                        <label for="">Select competency</label>
+                        <input type="text" id="skillsAuto" class="form-control" data-source="{{ path('skills_json') }}" data-prototype="{{ path('skill_prototype') }}" placeholder="Start typing to search skills ...">
+                    </p>
+                </div>
+                <div class="col-1">
+                    <p class="text-center">
+                        <label class="d-block">&nbsp;</label>
+                        <span class="nexa-bold">Or</span>
+                    </p>
+                </div>
+                <div class="col-3">
                 <p>
-                    <label for="">Select competency</label>
-                    <input type="text" id="skillsAuto" class="form-control" data-source="{{ path('skills_json') }}" data-prototype="{{ path('skill_prototype') }}" placeholder="Start typing to search skills ...">
+                <label>&nbsp;</label>
+                        <a href="{{ path('skill_new') }}" class="btn btn-primary btn-block">Add new Competency</a>
                 </p>
-            </div>
-            <div class="col-1">
-                <p class="text-center">
-                    <label class="d-block">&nbsp;</label>
-                    <span class="nexa-bold">Or</span>
-                </p>
-            </div>
-            <div class="col-3">
-               <p>
-               <label>&nbsp;</label>
-                    <a href="{{ path('skill_new') }}" class="btn btn-primary btn-block">Add new Competency</a>
-               </p>
-            </div>
-            <div class="col-12">
-                <div class="tree">
-                    <div class="list" id="selected-skills">
-                        {{ form_widget(form.disciplinesd) }}
-                        {# {{ form_errors(form.disciplinesd) }} #}
+                </div>
+                <div class="col-12">
+                    <div class="tree">
+                        <div class="list" id="selected-skills">
+                            {{ form_widget(form.disciplinesd) }}
+                            {# {{ form_errors(form.disciplinesd) }} #}
+                        </div>
                     </div>
                 </div>
             </div>
+        </fieldset>
+    
+        <div class="mt-3 mb-3 text-right">
+            <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
         </div>
-    </fieldset>
-
-    <div class="mt-3 mb-3 text-right">
-        <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
     </div>
 {{ form_end(form) }}

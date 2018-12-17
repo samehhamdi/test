@@ -2,6 +2,61 @@
 
 {% block title %}{% trans %} Edit Competency {% endtrans %}| {{ parent() }}{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .checkbox-group.group-md label {
+            height: 45px;
+            line-height: 44px;
+            font-size: 1.5rem;
+            margin-bottom: 0;
+        }
+    </style>
+{% endblock %}
+
+{% form_theme form _self %}
+{% block _skill_levels_entry_row %}
+    <ul class="nav nav-tabs justify-content-end">
+        <li class="nav-item"><a class="nav-link active" href="#en_tabs_{{ form.vars.value.id }}" data-toggle="tab" role="tab" aria-controls="en_tabs_{{ form.vars.value.id }}" aria-selected="true">En</a></li>
+        <li calss="nav-item"><a class="nav-link" href="#fr_tabs_{{ form.vars.value.id }}" data-toggle="tab" role="tab" aria-controls="fr_tabs_{{ form.vars.value.id }}" aria-selected="false">Fr</a></li>
+    </ul>
+    <div class="item main-item mb-3">
+        <div class="item-inner tab-content">
+            <div class="tab-pane fade show active" id="en_tabs_{{ form.vars.value.id }}" role="tabpanel" aria-labelledby="en-tabs">
+                <div class="row align-items-center">
+                    <div class="col-1 nexa-bold">{{ form.vars.value.id }}</div>
+                    <div class="col-11">
+                        <p>
+                            {{ form_label(form.titleEn) }}
+                            {{ form_widget(form.titleEn) }}
+                        </p>
+                        <p>
+                            {{ form_label(form.descriptionEn) }}
+                            {{ form_widget(form.descriptionEn) }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="fr_tabs_{{ form.vars.value.id }}" role="tabpanel" aria-labelledby="fr-tabs">
+                <div class="row align-items-center">
+                    <div class="col-1 nexa-bold">{{ form.vars.value.id }}</div>
+                    <div class="col-11">
+                        <p>
+                            {{ form_label(form.titleFr) }}
+                            {{ form_widget(form.titleFr) }}
+                        </p>
+                        <p>
+                            {{ form_label(form.descriptionFr) }}
+                            {{ form_widget(form.descriptionFr) }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
+
 {% block body %}
     <section class="container mt-5">
         <h1>{% trans %} Competency  {% endtrans %} </h1>

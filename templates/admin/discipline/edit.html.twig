@@ -61,9 +61,6 @@
         function updateLevelTabs(){
             $('#selected-skills').find('.item').addClass('d-none');
             $('#selected-skills').find('.item').each(function(){
-                console.log(currentDisciplineLevel);
-                console.log($(this).attr('data-disciplineLevel'));
-                console.log('-----');
                 if($(this).attr('data-disciplineLevel') == currentDisciplineLevel)
                     $(this).removeClass('d-none');
             });

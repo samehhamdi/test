@@ -29,12 +29,13 @@ class SkillType extends AbstractType
                 },
                 'multiple' => false,
                 'expanded' => true,
+                'attr' => array('class' => 'checkbox-group horizontal-group group-md')
             ))
             ->add('levels', CollectionType::class, array(
                 'label' => 'form.skill.levels',
                 'entry_type' => LevelType::class,
                 'allow_add' => true,
-                'prototype' => true,
+                'prototype' => false,
                 'by_reference' => false,
 
             ))

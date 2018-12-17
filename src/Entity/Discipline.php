@@ -61,7 +61,7 @@ class Discipline
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Family", inversedBy="disciplines")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $family;
 
@@ -218,7 +218,9 @@ class Discipline
         return $this;
     }
 
-
-
+    public function __toString()
+    {
+        return $this->getTitleEn();
+    }
 
 }

@@ -43,6 +43,9 @@ class DisciplineType extends AbstractType
             )
             ->add('family', EntityType::class, array(
                 'class' => Family::class,
+                'required'   => false,
+                'empty_data' => NULL,
+                'placeholder' => 'unassigned',
                 'choice_label' => 'titleEn',
                 'attr' => array('class' => 'form-control')
             ))

@@ -22,8 +22,8 @@ class FamilyType extends AbstractType
             ->add('disciplines', CollectionType::class, array(
                 'label' => 'form.family.disciplines',
                 'entry_type' => DisciplineType::class,
-                'allow_add' => true,
-                'prototype' => true,
+                'allow_add' => false,
+                'prototype' => false,
                 'by_reference' => false,
 
             ))
