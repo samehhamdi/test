@@ -26,11 +26,12 @@ class SkillType extends AbstractType
                     'Technical' => 'T', 'Functional' => 'F', 'Core' => 'C'),
                 'multiple' => false,
                 'expanded' => true,
+                'attr' => array('class' => 'checkbox-group horizontal-group group-md')
             ))
             ->add('levels', CollectionType::class, array(
                 'entry_type' => LevelType::class,
                 'allow_add' => true,
-                'prototype' => true,
+                'prototype' => false,
                 'by_reference' => false,
 
             ))

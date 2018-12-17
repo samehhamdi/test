@@ -21,8 +21,8 @@ class FamilyType extends AbstractType
             ->add('descriptionFr', TextareaType::class, array('attr' => array( 'class' => 'editor form-control')))
             ->add('disciplines', CollectionType::class, array(
                 'entry_type' => DisciplineType::class,
-                'allow_add' => true,
-                'prototype' => true,
+                'allow_add' => false,
+                'prototype' => false,
                 'by_reference' => false,
 
             ))

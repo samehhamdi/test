@@ -46,10 +46,15 @@
         </div>
     </fieldset>
     <h3 class="text-darkgrey mt-3">{{ form_label(form.levels) }}</h3>
-   <fieldset class="bg-grey-1 p-4">
+
+    <fieldset class="bg-grey-1 p-4">
         <div class="row">
             <div class="col-12 tab-content">
-            {{ form_widget(form.levels) }}
+                <div class="tree">
+                    <div class="list" id="skill-levels">
+                        {{ form_widget(form.levels) }}
+                    </div>
+                </div>
             </div>
         </div>
     </fieldset>

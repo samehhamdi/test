@@ -11,3 +11,12 @@
         {{ include('admin/discipline/_form.html.twig') }}
     </section>
 {% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script>
+    $(function(){
+        $('#competenciesBlock').hide();
+    })
+</script>
+{% endblock %}
