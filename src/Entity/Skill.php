@@ -27,7 +27,7 @@ class Skill
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Required")
+     * @Assert\NotBlank(message="skill.titleEn.required")
      */
     private $titleEn;
 
@@ -37,7 +37,7 @@ class Skill
     private $descriptionEn;
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Required")
+     * @Assert\NotBlank(message="skill.titleFr.required")
      */
     private $titleFr;
 

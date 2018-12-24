@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %} User index {% endtrans %}{% endblock %}
+
+{% block body %}
+    <h1>{% trans %}User index {% endtrans %}</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{% trans %} Username {% endtrans %}</th>
+                <th>{% trans %} Email {% endtrans %} </th>
+                <th>{% trans %} Roles {% endtrans %} </th>
+                <th>{% trans %} actions {% endtrans %}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    {% for role in user.roles %}
+                        {{ role.name }}
+                    {% endfor %}
+
+                </td>
+                <td>
+                    <a href="{{ path('user_show', {'id': user.id}) }}">{% trans %} show {% endtrans %}</a>
+                    <a href="{{ path('user_edit', {'id': user.id}) }}">{% trans %} edit {% endtrans %}</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">{% trans %} no records found {% endtrans %}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <p> <a href="{{ path('user_new') }}">{% trans %} Create new user{% endtrans %}</a></p>
+
+    <p><a href="{{ path('role_new') }}">{% trans %} Create new role {% endtrans %}</a></p>
+{% endblock %}

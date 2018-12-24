@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %} Role {% endtrans %}{% endblock %}
+
+{% block body %}
+    <h1>{% trans %} Role {% endtrans %}</h1>
+
+    <table class="table">
+        <tbody>
+
+            <tr>
+                <th>Name</th>
+                <td>{{ role.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('role_index') }}">{% trans %} back to list {% endtrans %}</a>
+
+    <a href="{{ path('role_edit', {'id': role.id}) }}">{% trans %} edit {% endtrans %}</a>
+
+    {{ include('admin/role/_delete_form.html.twig') }}
+{% endblock %}

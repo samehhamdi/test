@@ -28,24 +28,24 @@ class Level
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Required")
+     * @Assert\NotBlank(message="level.titleEn.required")
      */
     private $titleEn;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Required")
+     * @Assert\NotBlank(message="level.descriptionEn.required")
      */
     private $descriptionEn;
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Required")
+     * @Assert\NotBlank(message="level.titleFr.required")
      */
     private $titleFr;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Required")
+     * @Assert\NotBlank(message="level.descriptionFr.required")
      */
     private $descriptionFr;
     /**

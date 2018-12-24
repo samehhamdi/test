@@ -34,7 +34,7 @@ class Family
     /**
      * @ORM\Column(type="string", length=255)
      *
-     * @Assert\NotBlank(message="Required")
+     * @Assert\NotBlank(message="family.titleEn.required")
      *
      */
     private $titleEn;
@@ -48,7 +48,7 @@ class Family
     /**
      * @ORM\Column(type="string", length=255)
      *
-     * @Assert\NotBlank(message="Required")
+     * @Assert\NotBlank(message="family.titleFr.required")
      *
      */
     private $titleFr;

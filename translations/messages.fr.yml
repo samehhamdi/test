@@ -12,7 +12,7 @@ Discipline: Discipline
 Disciplines: Disciplines
 'no records found': 'Aucun enregistrement trouvé'
 'New Discipline': 'Nouvelle discipline'
-Dashboard: Tableau de bord
+Dashboard: 'Tableau de bord'
 'Edit Skill': 'Modifier une compétence'
 'Skill / Competency': Compétence
 Skills: Compétences
@@ -56,3 +56,24 @@ Competency: Compétence
 Competencies: Compétences
 'New Competency': 'Nouvelle Compétence'
 Profile: Profil
+'Edit Role': 'Modifier Role'
+'back to list': 'Retour à la liste'
+Name: Nom
+actions: actions
+'New Role': 'Nouveau Role'
+'Create new Role': 'Créer  un role'
+Role: Role
+edit: Modifier
+Delete: Supprimer
+'Edit User': 'Modifier Un utilisateur'
+'User index': 'User index'
+Username: Username
+Email: Email
+Roles: Roles
+show: show
+'Create new User': 'Créer un Utilisateur'
+User: Utilisateur
+'User Management': 'Gestion des utilisateurs'
+Save: Save
+'Create new user': 'Créer Nouveau Utilisateur'
+'Create new role': 'Créer Nouveau Role'
