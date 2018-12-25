@@ -6,7 +6,7 @@ security:
                 service: Symfony\Component\Ldap\Ldap
                 base_dn: 'OU=Regional,DC=ad,DC=linedata,DC=com'
                 default_roles: ROLE_USER
-                uid_key: 'stouati'
+                uid_key: sAMAccountName
                 search_dn: 'cn=read-only-admin,dc=linedata,dc=com'
                 search_password: ''
                 filter: '(&(objectCategory=person)(objectClass=user)(samaccountname=stouati))'
