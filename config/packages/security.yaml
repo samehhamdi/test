@@ -1,6 +1,15 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
+        my_ldap:
+            ldap:
+                service: Symfony\Component\Ldap\Ldap
+                base_dn: 'OU=Regional,DC=ad,DC=linedata,DC=com'
+                default_roles: ROLE_USER
+                uid_key: sAMAccountName
+                search_dn: 'cn=read-only-admin,dc=linedata,dc=com'
+                search_password: ''
+                filter: '(&(objectCategory=person)(objectClass=user)(samaccountname=stouati))'
         in_memory: { memory: ~ }
     firewalls:
         dev:
@@ -21,4 +30,4 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+    # - { path: ^/profile, roles: ROLE_USER }

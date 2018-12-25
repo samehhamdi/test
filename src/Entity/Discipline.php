@@ -28,7 +28,7 @@ class Discipline
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Required")
+     * @Assert\NotBlank(message="discipline.titleEn.required")
      *
      */
     private $titleEn;
@@ -39,7 +39,7 @@ class Discipline
     private $descriptionEn;
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Required")
+     * @Assert\NotBlank(message="discipline.titleFr.required")
      *
      */
     private $titleFr;
@@ -61,7 +61,8 @@ class Discipline
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Family", inversedBy="disciplines")
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotBlank
      */
     private $family;
 
