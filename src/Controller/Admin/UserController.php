@@ -25,16 +25,20 @@ class UserController extends AbstractController
     public function index(UserRepository $userRepository): Response
     {
 
-
-
-        $ldap =Ldap::create('ext_ldap', array(
-            'host' => 'ln1ads01.ad.linedata.com',
-           // 'encryption' => 'ssl',
+        $ldap = Ldap::create('ext_ldap', array(
+            'host' => 'TN1ADS05',
+            'encryption' => 'none',
+            'version' => 3,
+            'debug' => true,
+            'referrals' => false,
         ));
-        /*$query = $ldap->query('ou=Regional,dc=ad,dc=linedata,dc=com', '(&(objectclass=person)(ou=Maintainers))');
-        $results = $query->execute();*/
-        dump($ldap);die;
+        $filter="(&(objectCategory=person)(objectClass=user)(sAMAccountName=ST*))";
+        $ldap->bind('SA_KenLDAP', 'LDS@ken01');
+        $query = $ldap->query('ou=Regional,dc=ad,dc=linedata,dc=com', $filter);
+        $results = $query->execute();
+        //dump($symf->toArray());die;
 
+        //echo '<pre>';print_r($results->toArray());die;
         return $this->render('admin/user/index.html.twig', ['users' => $userRepository->findAll()]);
     }
 
