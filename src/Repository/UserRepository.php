@@ -5,6 +5,8 @@ namespace App\Repository;
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Symfony\Component\Ldap\Ldap;
+use Symfony\Component\Ldap\Adapter\ExtLdap\Adapter;
 
 /**
  * @method User|null find($id, $lockMode = null, $lockVersion = null)
@@ -47,4 +49,27 @@ class UserRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function getADUsersByUsername($mail)
+    {
+        $ldap = Ldap::create('ext_ldap', array(
+            'host' => 'TN1ADS05',
+            'encryption' => 'none',
+            'version' => 3,
+            'debug' => true,
+            'referrals' => false,
+        ));
+        $filter="(&(mail=$mail*))";
+        $ldap->bind('SA_KenLDAP', 'LDS@ken01');
+        $query = $ldap->query('ou=Regional,dc=ad,dc=linedata,dc=com', $filter);
+        $results = $query->execute();
+      // echo '<pre>';print_r($results[0]->getAttributes());die;
+        foreach($results as $result){
+            $index=$result->getAttributes()['mail'][0];
+            $array[$index]=$result->getAttributes()['mail'][0];
+        }
+
+
+        return $array;
+    }
 }
