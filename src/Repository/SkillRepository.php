@@ -47,4 +47,47 @@ class SkillRepository extends ServiceEntityRepository
         ;
     }
     */
+
+
+    /**
+     * return skills that have not both  english/french description
+     */
+    public function getSkillsNoEnFrDescription(){
+        $results=$this->createQueryBuilder('s')
+            ->andWhere('s.descriptionEn = :val1')
+            ->andWhere('s.descriptionFr = :val2')
+            ->setParameter('val1', '')
+            ->setParameter('val2', '')
+            ->orderBy('s.id', 'ASC')
+            ->getQuery()
+            ->getResult() ;
+        return ($results);
+
+    }
+    /**
+     * return skills that have no english description
+     */
+    public function getSkillsNoEnDescription(){
+        $results=$this->createQueryBuilder('s')
+            ->andWhere('s.descriptionEn = :val')
+            ->setParameter('val', '')
+            ->orderBy('s.id', 'ASC')
+            ->getQuery()
+            ->getResult() ;
+        return ($results);
+
+    }
+    /**
+     * return skills that have no french description
+     */
+    public function getSkillsNoFrDescription(){
+        $results=$this->createQueryBuilder('s')
+            ->andWhere('s.descriptionFr = :val')
+            ->setParameter('val', '')
+            ->orderBy('s.id', 'ASC')
+            ->getQuery()
+            ->getResult() ;
+        return ($results);
+
+    }
 }

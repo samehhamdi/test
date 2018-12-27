@@ -28,7 +28,7 @@ class UserType extends AbstractType
                 'attr' => array('class' => 'form-control')
             ))
             ->add('email', ChoiceType::class, array(
-                'choices' => UserRepository::getADUsersByUsername('s'),
+                'choices' => UserRepository::getADUsersByUsername('j'),
                 'placeholder' => '',
             ))
         ;
