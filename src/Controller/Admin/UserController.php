@@ -33,7 +33,7 @@ class UserController extends AbstractController
         ));
         /*$query = $ldap->query('ou=Regional,dc=ad,dc=linedata,dc=com', '(&(objectclass=person)(ou=Maintainers))');
         $results = $query->execute();*/
-        dump($ldap);die;
+//        dump($ldap);die;
 
         return $this->render('admin/user/index.html.twig', ['users' => $userRepository->findAll()]);
     }
