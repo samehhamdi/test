@@ -8,11 +8,7 @@ use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Ldap\Ldap;
-use Symfony\Component\Ldap\Adapter\ExtLdap\Adapter;
-
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Role;
 
 /**
  * @Route("/admin/user")
@@ -24,18 +20,7 @@ class UserController extends AbstractController
      */
     public function index(UserRepository $userRepository): Response
     {
-
-
-
-        $ldap =Ldap::create('ext_ldap', array(
-            'host' => 'ln1ads01.ad.linedata.com',
-           // 'encryption' => 'ssl',
-        ));
-        /*$query = $ldap->query('ou=Regional,dc=ad,dc=linedata,dc=com', '(&(objectclass=person)(ou=Maintainers))');
-        $results = $query->execute();*/
-//        dump($ldap);die;
-
-        return $this->render('admin/user/index.html.twig', ['users' => $userRepository->findAll()]);
+     return $this->render('admin/user/index.html.twig', ['users' => $userRepository->findAll()]);
     }
 
     /**
