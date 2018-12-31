@@ -22,11 +22,20 @@ class IndexController extends AbstractController
 
     public function index(FamilyRepository $fR, DisciplineRepository $dR, SkillRepository $sR): Response
     {
-       /* $session = new Session(new NativeSessionStorage(), new AttributeBag());
-        $session->set('token', 'a6c1e0b6');
-        $token = $session->get('token');
-        dump($session);die;*/
-        return $this->render('admin/index/index.html.twig', 
+
+
+        $request=new Request();
+        $session = $request->hasPreviousSession();
+        if($session){
+
+        }
+        else {
+            $session = new Session(new NativeSessionStorage(), new AttributeBag());
+            $session->set('token', 'a6c1e0b6');
+
+        }
+       // dump($session);die;
+        return $this->render('admin/index/index.html.twig',
             array(
                 'families' => $fR->findAll(),
                 'disciplines' => $dR->findAll(),

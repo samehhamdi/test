@@ -47,4 +47,46 @@ class FamilyRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    /**
+     * return families that have not both  english/french description
+     */
+    public function getFamiliesNoEnFrDescription(){
+        $results=$this->createQueryBuilder('f')
+            ->andWhere('f.descriptionEn = :val1')
+            ->andWhere('f.descriptionFr = :val2')
+            ->setParameter('val1', '')
+            ->setParameter('val2', '')
+            ->orderBy('f.id', 'ASC')
+            ->getQuery()
+            ->getResult() ;
+        return ($results);
+
+    }
+    /**
+     * return families that have no english description
+     */
+    public function getFamiliesNoEnDescription(){
+        $results=$this->createQueryBuilder('f')
+            ->andWhere('f.descriptionEn = :val')
+            ->setParameter('val', '')
+            ->orderBy('f.id', 'ASC')
+            ->getQuery()
+            ->getResult() ;
+        return ($results);
+
+    }
+    /**
+     * return families that have no french description
+     */
+    public function getFamiliesNoFrDescription(){
+        $results=$this->createQueryBuilder('f')
+            ->andWhere('f.descriptionFr = :val')
+            ->setParameter('val', '')
+            ->orderBy('f.id', 'ASC')
+            ->getQuery()
+            ->getResult() ;
+        return ($results);
+
+    }
 }
