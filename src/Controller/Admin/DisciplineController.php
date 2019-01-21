@@ -31,7 +31,7 @@ class DisciplineController extends AbstractController
      */
     public function new(Request $request): Response
     {
-
+// test
         $discipline = new Discipline();
 
         $form = $this->createForm(DisciplineType::class, $discipline);
